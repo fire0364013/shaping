@@ -1,0 +1,37 @@
+body{font: 12px arial;margin: 0;padding: 0}
+a:link,a:visited{text-decoration: none;	}
+a:hover{text-decoration: underline;	}
+#main{
+	margin:50px 20px;
+	padding: 0px auto;
+	text-align: center;
+}
+
+#s_nav{
+	font-weight: bold;
+	color: #444;
+}
+#s_nav img{
+	margin-right: 10px;	
+}
+#search_type{
+	font-weight: bold;
+	color: #444;
+	margin: 6px;
+}
+/*form*/
+#search .input-row{
+    width: 25em;
+    border:1px groove #aaaaaa;
+    height:28px;
+}
+#search .s_btn{
+	border:none;
+    background:url('../../images/datacenter/s_btn.gif');
+    width: 95px;
+    height: 32px;
+    font-weight: bold;
+    margin: 0px 6px;
+    cursor: pointer;
+    padding: 0px;
+}

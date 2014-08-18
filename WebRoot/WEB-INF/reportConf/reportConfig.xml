@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportConfig>
+  <config>
+    <name>logConfig</name>
+    <value>/WEB-INF/reportConf/runqianReportLog.properties</value>
+  </config>
+  <config>
+    <name>license</name>
+    <value>/WEB-INF/reportConf/reportServerWindows.lic</value>
+  </config>
+  <config>
+    <name>reportFileHome</name>
+    <value>/lims/reportFiles</value>
+  </config>
+
+  <config>
+    <name>JNDIPrefix</name>
+    <value>java:comp/env</value>
+  </config>
+  
+<jdbc-ds-configs>
+ <jdbc-ds-config>
+  <name>jdbc/report</name> 
+  <db-type>oracle</db-type> 
+  <connection-url>jdbc:oracle:thin:@172.16.60.6:1521:orcl</connection-url> 
+  <driver-class>oracle.jdbc.driver.OracleDriver</driver-class> 
+  <user-name>cslims</user-name> 
+  <password>cslims</password> 
+  <db-charset>UTF-8</db-charset> 
+  <client-charset>UTF-8</client-charset> 
+  <extend-properties /> 
+  </jdbc-ds-config>
+</jdbc-ds-configs>
+
+  <config>
+    <name>jspCharset</name>
+    <value>UTF-8</value>
+  </config>
+  <config>
+    <name>alwaysReloadDefine</name>
+    <value>yes</value>
+  </config>
+  <config>
+    <name>cachedParamsTimeout</name>
+    <value>120</value>
+  </config>
+  <config>
+    <name>cachedReportDir</name>
+    <value>E:\work\report\cached</value>
+  </config>
+  <config>
+    <name>cachedIdPrefix</name>
+    <value>A</value>
+  </config>
+  <config>
+    <name>cachedReportTimeout</name>
+    <value>120</value>
+  </config>
+  <config>
+    <name>maxCellNum</name>
+    <value>100000</value>
+  </config>
+  <config>
+    <name>maxConcurrentForReport</name>
+    <value>10</value>
+  </config>
+  <config>
+    <name>maxWaitForReport</name>
+    <value>10</value>
+  </config>
+  <config>
+    <name>maxWaitTimeForReport</name>
+    <value>30</value>
+  </config>
+  <config>
+    <name>appUrlPrefix</name>
+    <value />
+  </config>
+  <config>
+    <name>windir</name>
+    <value />
+  </config>
+  <config>
+    <name>errorPage</name>
+    <value />
+  </config>
+  <config>
+    <name>webServerType</name>
+    <value />
+  </config>
+  <config>
+    <name>jreInstallName</name>
+    <value />
+  </config>
+  <config>
+    <name>jreVersion</name>
+    <value />
+  </config>
+  <config>
+    <name>clusterMember</name>
+    <value />
+  </config>
+  <config>
+    <name>isCachedFileShared</name>
+    <value />
+  </config>
+  <config>
+    <name>olapGraphProfile</name>
+    <value />
+  </config>
+  <config>
+    <name>olapDir</name>
+    <value />
+  </config>
+</reportConfig>
+

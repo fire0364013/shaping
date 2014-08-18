@@ -1,0 +1,176 @@
+html,body{height: 100%;width: 100%;margin: 0px;padding: 0px;}
+/*头部面板*/
+#header{
+	position:relative;
+	height: 60px;
+	z-index: 10;
+}
+#top_banner{
+	height: 58px;
+	background:#0e66a6 url('../images/adbp/header_bg.jpg') no-repeat;
+	font-size:9pt;
+}
+#logo{
+	margin: 5px;
+}
+/*顶部右边操作按钮/时间等信息*/
+#oprate_btn{
+	float: right;
+	margin:15px 8px 0px 0px;
+	padding: 0px;
+	display: inline;
+}
+#oprate_btn .btn{
+	border: none;
+	padding: 0px;
+}
+#oprate_btn .btn img{
+	border: none;
+	margin: 0px 7px 0px 0px;
+	width: 32px;
+	height: 32px;
+}
+#top-info{
+	float:right;
+	color:#ffffff;
+	margin:23px 10px 0px 0px;
+	padding: 0px;
+	text-align: left;
+}
+#top-info span{
+	margin-right: 30px;
+	
+}
+#top-info span .icon{
+	width: 16px;
+	height: 16px;
+	margin-right: 2px !important;
+	border: none;
+}
+/*中部主面板*/
+.mainContent{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+/*底部DIV*/
+.footer{
+	background-image:url('../images/adbp/footer_bg.gif');
+	background-repeat:repeat-x;
+	text-align:center;
+	width: 100%;
+	padding: 0px;
+	height: 18px;
+	line-height:18px;
+	font-size: 12px;
+	margin: 0px;
+	color:#ffffff;
+}
+/*左边菜单上部*/
+#left_nav{
+	background: #299bdd url('../images/adbp_dc/left_nav_bg.png');
+	border-bottom: 1px #2099d8 solid;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+}
+/*一级目录*/
+#menu_1{
+	float:left;
+    padding-right: 5px;
+    list-style: none;
+    display: inline;
+    margin-top: 1px;
+}
+#menu_1 img{
+	cursor: pointer;
+}
+#menu_1 li{
+    float: left;
+    position: relative;
+    margin: 0px 12px 0px;
+    font-size: 12px;
+    color:#fff;
+    padding:0px;
+    text-align: center;
+}
+/*二级目录*/
+#menu_2{
+	text-align: center;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#menu_2 li{
+	margin:10px;
+    list-style: none;
+}
+#menu_2 img{
+	border: none;	
+}
+#menu_2 div{
+	color: #fff;
+	margin: 5px;	
+}
+/*当前位置*/
+#current_location{
+	margin: 0px;
+	padding:0px;
+	font-size:9pt;
+	line-height:22px; 
+	background-image:url('../images/adbp/current_location_bg.gif'); 
+	background-repeat:repeat-x;
+	padding-left: 15px;
+	border-bottom: 1px #a9c3d2  solid;
+}
+#current_location .current_item{
+	font-weight:bolder; 
+	font-size:9pt;
+}
+/*应用跳转下拉框*/
+#appsListContainer{
+	position:relative;
+	display: block;
+	float:right;
+	border: 1px #ccc solid;
+	padding: 2px;
+	margin: 0px 5px 0px 3px;
+	margin-right: 3px;
+	cursor: pointer;
+	line-height: 18px;
+	height: 18px;
+	z-index: 10;
+	text-align: left;
+	color: #fff;
+}
+#appsListContainer:hover ul{
+	cursor: pointer;
+}
+#appsListContainer ul{
+	list-style: none;
+	margin: 0px;
+	margin-top:5px;
+	padding: 0px;
+	width: 100%;
+	display: none;
+	background-color: #155ba1;
+}
+#appsListContainer ul li{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+} 
+#appsListContainer ul li:hover{
+	background-color: #2c8bd0;
+}
+#appsList{
+	background:url('../images/adbp/dropdown_link_image.jpg') no-repeat right top; 
+	display: block;
+	width: 100%;
+	margin-right: 0px !important;
+	padding: 0px;
+	width: 140px;
+}

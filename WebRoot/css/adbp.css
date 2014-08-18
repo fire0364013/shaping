@@ -1,0 +1,235 @@
+html,body{height: 100%;width: 100%;margin: 0px;padding: 0px;}
+
+/*头部面板*/
+#header{
+	position:relative;
+	z-index: 10;
+	height: 102px;
+}
+#top_banner{
+	background:#0e66a6 url('../images/adbp/header_bg.jpg') no-repeat;
+	font-size:9pt;
+	height:58px;
+	border-bottom: 1px #fff solid;
+}
+#top_banner td{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+/*欢迎信息*/
+#top_banner .welcome-info{
+	color: #fff;	
+}
+#logo{
+	margin: 6px;
+	top: 0px;
+}
+#oprate_btn{
+	margin:10px 30px 0px 0px;
+	padding: 0px;
+	display: inline;
+}
+#oprate_btn .btn{
+	border: none;
+	padding: 0px;
+}
+#oprate_btn .btn img{
+	border: none;
+	margin: 0px 7px 0px 0px;
+	width: 32px;
+	height: 32px;
+}
+#top-info{
+	color:#ffffff;
+	margin-top: 12px;
+	padding: 0px;
+	display: inline;
+	float: left;
+}
+#top-info img{
+	border: none;	
+}
+#top-info span{
+	margin-right: 23px;	
+	line-height: 16px;
+	padding: 0px;
+	text-align: center;
+}
+#top-info span label{
+	margin:0px;
+	line-height: 16px;
+}
+#top-info span .icon{
+	margin:0px;
+	margin-right: 3px !important;
+}
+/*中部主面板*/
+#mainContent{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+#mainContent .mainFrame{
+	width:100%;
+	height: 100%;
+}
+/*底部DIV*/
+.footer{
+	background-image:url('../images/adbp/footer_bg.gif');
+	background-repeat:repeat-x;
+	text-align:center;
+	width: 100%;
+	padding: 0px;
+	height: 18px;
+	line-height:18px;
+	font-size: 12px;
+	margin: 0px;
+	color:#ffffff;
+}
+/*当前位置*/
+#current_location{
+	margin: 1px 0px 0px 0px;
+	padding:1px 0px 0px 6px;
+	font-size:9pt;
+	line-height:22px; 
+	background-image:url('../images/adbp/current_location_bg.gif'); 
+	background-repeat:repeat-x;
+	text-align: left;
+}
+#current_location .current_item{
+	font-weight:bolder; 
+	font-size:9pt;
+}
+/*应用跳转下拉框*/
+#appsListContainer{
+	position:absolute;
+	right: 180px;
+	display: block;
+	top:18px;
+	border: 1px #ccc solid;
+	padding: 2px;
+	cursor: pointer;
+	text-align: left;
+	color: #fff;
+}
+#appsListContainer:hover ul{
+	cursor: pointer;
+}
+#appsListContainer ul{
+	list-style: none;
+	margin: 0px;
+	margin-top:5px;
+	padding: 0px;
+	width: 100%;
+	display: none;
+	background-color: #155ba1;
+}
+#appsListContainer ul li{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+} 
+#appsListContainer ul li:hover{
+	background-color: #2c8bd0;
+}
+#appsList{
+	background:url('../images/adbp/dropdown_link_image.jpg') no-repeat right top; 
+	display: block;
+	width: 100%;
+	margin-right: 0px !important;
+	padding: 0px;
+	width: 140px;
+}
+/*头部选项卡*/
+#topTags{
+	float: left;
+	margin:0px;
+	padding:0px;
+	display: inline;
+	padding-top:3px;
+	margin-bottom: 2px;
+	height:26px;
+	width: 100%;
+	position: relative;
+	background: #e0ecff;
+	border-top:1px #8db2e3 solid;
+	border-bottom:1px #8db2e3 solid;
+	overflow: hidden;
+}
+#topTags ul{
+	list-style: none;
+	margin: 0px 7px 0px 27px;
+	padding: 0px;
+	padding-right: 10px;
+	position: absolute;
+	clear: both;
+}
+#topTags ul li{
+	margin-top:3px;
+	margin-right: 18px;
+	float: left;
+	cursor: pointer;
+	padding: 0px 5px 0px 0px;
+	margin-bottom: 0px;
+	line-height: 22px;
+}
+#topTags ul li:hover{
+	background-color: #83ace2;
+}
+#topTags ul li a{
+	text-decoration: none;
+}
+#topTags ul li .tabs_inner{
+	margin: 0px;
+	padding:3px 15px 3px 10px;
+}
+#topTags ul li img{
+	vertical-align:middle;
+}
+/*标签页打开状态*/
+#topTags .tabOpen{
+	border:1px #8db2e3 solid;
+	border-bottom: 1px #fff solid;
+	background-color: #fff;
+}
+/*标签页关闭状态*/
+#topTags .tabClose{
+	border:1px #8db2e3 solid;
+	background: none;
+}
+/*标签页向前滚动*/
+#topTagBackWard{
+	position: relative;
+	float: left;
+	margin: -3px 5px 0px 0px;
+	padding:5px 1px;
+	cursor: pointer;
+	z-index: 2;
+	border-left:1px #8db2e3 solid;
+	border-right:1px #8db2e3 solid;
+	height: 32px;
+	line-height: 32px;
+	background-color:#e0ecff;
+}
+#topTagBackWard:hover{
+	background-color:#bde2f8;
+}
+/*标签页向后滚动*/
+#topTagForward{
+	position: relative;
+	float: right;
+	margin: -3px 0px 0px 3px;
+	padding:5px 1px;
+	cursor: pointer;
+	z-index: 2;
+	border-left:1px #8db2e3 solid;
+	border-right:1px #8db2e3 solid;
+	line-height: 32px;
+	height: 32px;
+	background-color:#e0ecff;
+}
+#topTagForward:hover{
+	background-color:#bde2f8;
+}

@@ -1,0 +1,173 @@
+body{
+    margin: 0px;padding: 0px;
+}
+/*导航菜单*/
+#menu{
+	height:31px;
+	background:#0078bf;
+    min-width:1000px;
+    width:auto !important;
+    margin:0px auto;
+    border-bottom: 1px solid #999999;
+    z-index:1;
+}
+/*一级目录*/
+#menu ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    color:#1173b7;
+}
+#menu ul li{
+    float: left;
+    position: relative;
+    margin: 0px 3px 0px 0px;
+    font-weight: bold;
+    font-size: 13px;
+    color:#1173b7;
+    padding:0px;
+    line-height:31px;
+}
+/*一级节点面板*/
+#menu ul li div{
+	position:absolute;
+    display:none;
+    top: 31px;
+    /*min-width:500px;*/
+    /*width:300px !important;*/
+    white-space: nowrap;
+    text-align:center;
+    left: -1px;
+}
+/*横向分割线*/
+#menu ul li div hr{
+    height:1px;border:none;border-top:1px solid #bbbbbb;
+}
+#menu ul li .firstMenu,#menu ul li .firstMenu:visited{
+    text-decoration:none;
+    text-align:center;
+    color: #ffffff;/**/
+    padding: 9px 7px;
+    margin: 0px;
+}
+#menu ul li:hover .firstMenu{
+    background: #f7f8fc;
+    color:#ea5504;
+}
+/*****二级目录****/
+/*二级目录面板上面小箭头*/
+#menu ul li div .top_arrows{
+	position: static !important;
+	background: url('../images/menu/ico_arrows_top.png') no-repeat;
+	background-position: 20px;
+	height: 8px;
+	margin: 0px;
+	padding: 0px;
+}
+/*用于包含table的div,设置边框等样式*/
+#menu ul li div .containTableDiv{
+	position: static !important;
+	margin: 0px;
+	padding: 10px;
+	border: 1px #aaa solid !important;
+	background: #f7f8fc;
+}
+#menu ul li div table{
+	border-collapse:collapse;
+}
+#menu ul li div table td{
+	background: #f7f8fc;
+    /*border-bottom: 1px #91C6D9 dashed;*/
+    vertical-align: top;
+    margin: 10px 10px;
+    color: #444;
+    padding: 5px;
+    border-top: none !important;
+}
+#menu ul li div .secondMenu{
+    text-decoration:none;
+    font-weight: bold;
+    font-size: 12px;
+}
+#menu ul li:hover div{
+    display:block;
+}
+
+/*三级目录*/
+#menu ul li div table td a,#menu ul li div table td a:visited{
+    text-decoration:none;
+    padding:3px;
+    color: #444;
+}
+#menu ul li div table td a:hover{
+    text-decoration:none;
+    color:#ea5504;
+}
+#menu ul li div ul{
+    list-style: none;
+}
+#menu ul li div table td ul li{
+    float: none;
+    line-height:15px;
+}
+#menu ul li div ul li ul li{
+    float:none;
+    margin: 5px;
+    padding: 0px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 12px;
+}
+/*四级(及以上)目录样式*/
+#menu ul li div .option{
+    display:block;
+    line-height:15px;
+    padding:2px;
+    background:no-repeat 5px 4px;
+    cursor:pointer;
+    font:12px;
+    zoom:1;
+}
+#menu ul li div .option:hover{
+    color:#ea5504;
+    text-decoration: underline;
+}
+#menu ul li div .li_3 .ul_4{
+    position:absolute;
+    display:none;
+    float:left;
+    z-index: 1;
+    left: 20px;
+}
+#menu ul li div .li_3 .ul_4 li{
+    position: relative;
+    text-align:center;
+    line-height: 20px;
+}
+
+#menu ul li div .li_3:hover .ul_4{
+    z-index:1;
+    border:1px solid #91C6D9;
+    border-width:1px 2px 2px 1px;
+    background:#fff;
+    padding:5px 10px;
+}
+/*IE6-7 菜单文字竖向问题*/
+#menu ul li div table tr td ul li{
+	white-space: nowrap;
+}
+
+/*菜单小箭头*/
+#menu .arrows_small{
+    top:3px;
+    position: relative;
+    padding-right: 2px;
+    border: 0px;
+    margin: 0px;
+}
+/*三级菜单箭头*/
+#menu .arrows_triangle{
+    margin-left: 10px;
+    border: 0px;
+    padding: 0px;
+}

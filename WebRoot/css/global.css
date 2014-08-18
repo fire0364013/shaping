@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+body{
+ padding:0px;
+ text-align:center;
+ font-size:12px;
+}
+.title{
+border:1px solid #b6b6b6;
+background-color:#f6f6f6;
+padding-left:20px;
+padding-top:8px;
+padding-bottom:8px;
+text-align:left;
+color:#003399;
+font-weight:bolder;
+margin-top:4px;
+margin-bottom:4px;
+margin-left: auto;
+margin-right: auto;
+
+}
+.tabtitle{
+ background-image:url('images/default/tabbg.gif');
+ color:#ffffff;
+ font-weight:bolder;
+}
+.tip{
+border:1px solid #ff6c00;
+background-color:#feffcc;;
+padding-left:20px;
+padding-top:8px;
+padding-bottom:8px;
+text-align:center;
+color:#d00000;
+font-weight:bolder;
+margin-top:4px;
+margin-bottom:4px;
+margin-left: auto;
+margin-right: 20px;
+}
+.title a {
+color:#003399;
+text-decoration:none;
+}
+td a {
+color:#003399;
+}
+.inputcss{
+	width:200px;
+}

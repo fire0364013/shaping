@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <!-- 对Spring容器进行实例化 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <!-- 载入行政区的ParentRegionCode -->
+   <context-param>
+    <param-name>parentRegionCode</param-name>
+    <param-value>310117000</param-value>
+  </context-param>
+  
+  <!--Spring的ApplicationContext 载入 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!-- Spring 刷新Introspector防止内存泄露 -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+  <!-- Filter 定义  -->
+  <!-- Character Encoding filter -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <!-- 字符过渡器结束 -->
+  <!-- Hibernate Open Session In View filter-->
+  <filter>
+    <filter-name>hibernateOpenSessionInViewFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  <!-- Struts2 filter -->
+  <filter>
+    <filter-name>struts2CleanUpFilter</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+  </filter>
+  <filter>
+    <filter-name>struts2Filter</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <!-- Filter 映射 -->
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>hibernateOpenSessionInViewFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>struts2CleanUpFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>struts2Filter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <!-- session超时定义,单位为分钟 -->
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+ 
+	<servlet>
+		<servlet-name>restlet</servlet-name>
+		<servlet-class>org.restlet.ext.spring.SpringServerServlet</servlet-class>
+		<init-param>
+			<param-name>org.restlet.component</param-name>
+			<param-value>component</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>restlet</servlet-name>
+		<url-pattern>/restlet/*</url-pattern>
+	</servlet-mapping> 
+
+  <!-- <error-page>
+	  <error-code>404</error-code>
+	  <location>/WEB-INF/jsp/common/error.jsp</location>
+  </error-page>
+  <error-page>
+	  <error-code>500</error-code>
+	  <location>/WEB-INF/jsp/common/error.jsp</location>
+  </error-page> -->
+  <welcome-file-list>
+    <welcome-file>welcome.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  <!-- xfire 
+   <servlet>
+    <servlet-name>XFireServlet</servlet-name>
+    <servlet-class>org.codehaus.xfire.transport.http.XFireConfigurableServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XFireServlet</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>-->
+</web-app>
+

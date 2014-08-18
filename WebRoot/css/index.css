@@ -1,0 +1,40 @@
+body{font: 12px arial;margin: 0;padding: 0}
+a:link,a:visited{text-decoration: none;	}
+a:hover{text-decoration: underline;	}
+#top{
+	margin: 10px;
+	text-align: right;
+}
+#main{
+	text-align: center;
+	margin:50px 20px;
+	padding:0;
+	border: 0px solid;
+}
+#main #logo{
+	position: relative;
+	margin: 18px;
+	font-size: 18px;
+	font-weight: bolder;
+}
+#bottom{
+	color:#bbbbbb;
+	margin-top: 20px;
+	text-align: center;
+}
+/*form*/
+#main .input-row{
+    width: 100px;
+    border:1px groove #aaaaaa;
+    height:28px;
+}
+#main .s_btn{
+	border:none;
+    background:url('../images/datacenter/s_btn.gif');
+    width: 95px;
+    height: 32px;
+    font-weight: bold;
+    margin: 0px 6px;
+    cursor: pointer;
+    padding: 0px;
+}

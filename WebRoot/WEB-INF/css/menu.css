@@ -1,0 +1,149 @@
+body{margin: 0px;padding: 0px;}
+/*****导航菜单******/
+#menu{
+	height:30px;
+	background:#0078bf;
+    min-width:1000px;
+    width:auto !important;
+    margin:0px auto;
+    border-bottom: 1px solid #999999;
+    z-index:10;
+}
+/*******一级目录**********/
+#menu ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    color:#1173b7;
+}
+#menu ul li{
+    float: left;
+    position: relative;
+    margin: 0px 3px 0px 0px;
+    font-weight: bold;
+    font-size: 13px;
+    color:#1173b7;
+    padding:0px;
+    line-height:31px;
+}
+#menu ul li .firstMenu,#menu ul li .firstMenu:visited{
+    text-decoration:none;
+    text-align:center;
+    color: #ffffff;
+    padding: 9px 7px;
+    margin: 0px;
+}
+#menu ul li:hover .firstMenu{
+    background: #f7f8fc;
+    color:#ea5504;
+}
+/***********二级目录面板**************/
+#menu ul li .secondMenuPanel{
+	position:absolute;
+    display:none;
+    top: 29px;
+    white-space: nowrap;
+    left: 0px;
+}
+/*二级目录面板上面小箭头*/
+#menu ul li div .top_arrows{
+	position: static !important;
+	/*background: url('../images/menu/ico_arrows_top.png') no-repeat;*/
+	background-position: 20px;
+	border-bottom: 2px #ea5504 solid;
+	height: 7px;
+	line-height: 7px;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	overflow:hidden;
+	float: right;
+}
+/*用于包含table的div,设置边框等样式*/
+.containerDiv{
+	float: left;
+	position: relative;
+	margin: 0px;
+	margin-top: 0px;
+	padding: 12px;
+	border: 1px #aaa solid;
+	border-top:none;
+	background: #f7f8fc;
+	width: 540px;
+	z-index: 8;
+	clear: both;
+}
+.containerDiv a,.containerDiv a:visited{
+	text-decoration:none;
+	color:#444;
+}
+.containerDiv a:hover{
+	text-decoration:underline;
+    color:#ea5504;
+}
+#menu ul li:hover div{
+    display:block;
+}
+/******二/三级目录*******/
+/*dt为二级目录,dd为三级*/
+.containerDiv dl{
+	float: left;
+	border-top:1px dashed #aaa;
+	line-height:0px;
+	margin: 0px;
+	padding: 10px 0px 10px 0px;
+	width: 98%;
+}
+/*头部无上划线*/
+.containerDiv .fore{
+	border-top: none;
+}
+.containerDiv dl dt{
+	float: left;
+	margin: 0px;
+	margin-top: 5px;
+	white-space: normal;
+	line-height: normal;
+	font-weight: normal;
+	height: 6px;
+	padding: 0px;
+	padding-right: 10px;
+	width: 200px;
+}
+.containerDiv dl dd{
+	float: left;
+	margin: 4px 0px 0px 2px;
+	width: 200px;
+}
+#menu ul li div .containerDiv em{
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 12px;
+	margin-right: 11px;
+	font-style: normal;
+	float: left;
+	height: 12px;
+	line-height: 12px;
+}
+/*三级链接*/
+.containerDiv .linkItem{
+    line-height:15px;
+    padding:0px;
+    margin:0px;
+    cursor:pointer;
+    font:12px;
+    zoom:1;
+    font-weight: normal;
+}
+/*不换行属性*/
+.containerDiv .nowrap{
+	white-space:nowrap;
+}
+/*分隔栏*/
+.splitSpan{
+	border-right: 1px #bbb solid;
+	width: 1px;
+	margin-left: 10px;
+	height: 10px;
+	padding: 0px;
+}

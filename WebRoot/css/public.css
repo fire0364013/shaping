@@ -1,0 +1,359 @@
+body{font-size: 12px;}
+/**链接样式开始**/
+a:link,a:visited {text-decoration: none;color: #0066cc;}
+a:hover{text-decoration: underline;}
+
+/******表格开始******/
+/*有边框表格*/
+.Main_Tab_Style{
+    border:1px solid  #c5c5c5;
+	border-collapse:collapse;
+	line-height:24px;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-size: 12px;
+}
+.Main_Tab_Style.Main_Tab_Style td{
+	border: 1px #d5d5d5 solid;
+	margin: 0px;
+	padding: 0px;
+}
+.Main_Tab_Style .Main_Tab_Style_title{
+     background-color:#d8f2fd;
+	 text-align:right;
+	 color:#1281bb;
+}
+.Main_Tab_Style .Main_Tab_Style_Content{
+	 padding-left:5px;
+	 color:#000000;
+}
+/*无边框表格*/
+.Main_Tab_Style_noBorder{
+	padding: 3px;
+    border:none;
+	border-collapse:collapse;
+	line-height:24px;
+	margin-top:0px;
+	margin-bottom:0px;
+	font-size: 12px;
+}
+.Main_Tab_Style_noBorder td{
+	border: none;
+}
+.Main_Tab_Style_noBorder .Main_Tab_Style_title{
+	 padding: 0px 3px;
+     background-color:#d8f2fd;
+	 text-align:right;
+	 color:#1281bb;
+}
+.Main_Tab_Style_noBorder .Main_Tab_Style_Content{
+	 padding-left:5px;
+	 color:#000000;
+}
+/******表格结束******/
+
+/****按钮与链接样式开始*****/
+/*普通按钮*/
+.normal_btn{
+	color: #fff;
+	background:#0078be;
+	border: none;
+	padding: 2px 6px 2px 6px;
+	line-height: 16px;
+	margin:0px 3px;
+	height:24px;
+	cursor: pointer;
+}
+/*查询按钮*/
+.search_btn{
+	background:#0078be url('../images/public/ico_search.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*重置按钮*/
+.reset_btn{
+	background:#0078be url('../images/public/ico_reset.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*添加按钮*/
+.add_btn{
+	background:#0078be url('../images/public/ico_add.png');
+	background-position:5px;
+	background-repeat:no-repeat;
+	color: #fff;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*刷新按钮*/
+.refresh_btn{
+	background:#0078be url('../images/public/ico_reload.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*保存按钮*/
+.save_btn{
+	background:#0078be url('../images/public/ico_save.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*excel*/
+.excel_btn{
+	background:#0078be url('../images/public/ico_excel.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	border: none;
+	margin:0px 3px;
+	cursor: pointer;
+}
+/*数据导出 */
+.db_export_btn{
+	background:#0078be url('../images/public/ico_db_export.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	border: none;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px;
+	cursor: pointer;
+}
+/*word */
+.word_btn{
+	background:#0078be url('../images/public/ico_word.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	border: none;
+	margin:0px;
+	cursor: pointer;
+}
+/*打印*/
+.print_btn{
+	background:#0078be url('../images/public/ico_print.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px;
+	border: none;
+	cursor: pointer;
+}
+/*帮助*/
+.help_btn{
+	background:#0078be url('../images/public/ico_help.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px;
+	border: none;
+	cursor: pointer;
+}
+/*保存按钮*/
+.save_btn{
+	background:#0078be url('../images/public/ico_save.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px;
+	cursor: pointer;
+}
+/*上传按钮*/
+.upload_btn{
+	background:#0078be url('../images/public/ico_upload.png');
+	background-position:5px;
+	color: #fff;
+	background-repeat:no-repeat;
+	padding: 3px 5px 3px 20px;
+	line-height: 16px;
+	height:24px;
+	margin:0px;
+	border: none;
+	cursor: pointer;
+}
+/*蓝色左箭头*/
+.arrows_left_bule_btn{
+	background:#d3ebff url('../images/public/ico_arrows_left_blue.png');
+	background-repeat:no-repeat;
+	border: none;
+	padding-left: 17px;
+	line-height: 16px;
+	margin:5px 3px;
+	width: 100px;
+	cursor: pointer;
+}
+/*蓝色右箭头*/
+.arrows_right_bule_btn{
+	background:#d3ebff url('../images/public/ico_arrows_right_blue.png');
+	background-repeat:no-repeat;
+	border: none;
+	padding-left: 17px;
+	line-height: 16px;
+	margin:5px 3px;
+	width: 100px;
+	cursor: pointer;
+}
+/*蓝色双左箭头*/
+.arrows_left_d_bule_btn{
+	background:#d3ebff url('../images/public/ico_arrows_left_d_blue.png');
+	background-repeat:no-repeat;
+	border: none;
+	padding-left: 17px;
+	line-height: 16px;
+	margin:5px 3px;
+	width: 100px;
+	cursor: pointer;
+}
+/*蓝色双右箭头*/
+.arrows_right_d_bule_btn{
+	background:#d3ebff url('../images/public/ico_arrows_right_d_blue.png');
+	background-repeat:no-repeat;
+	border: none;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:5px 3px;
+	width: 100px;
+	cursor: pointer;
+}
+/*详情查看链接*/
+.detail_link{
+	background-image:url('../images/public/ico_detail.png');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*编辑*/
+.edit_link{
+	background-image:url('../images/public/ico_edit.gif');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*查看*/
+.view_link{
+	background-image:url('../images/public/ico_view.gif');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*删除*/
+.del_link{
+	background-image:url('../images/public/ico_del.png');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*审核*/
+.verify_link{
+	background-image:url('../images/public/ico_verify.gif');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*查找*/
+.search_link{
+	background-image:url('../images/public/search.png');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/*提交*/
+.submit_link{
+	background-image:url('../images/public/ico_ok.png');
+	background-repeat:no-repeat;
+	padding-left: 16px;
+	line-height: 16px;
+	margin:0px;
+	cursor: pointer;
+}
+/****按钮与链接样式结束*****/
+
+.TextBox{
+	border:1px solid #7a9dcc;
+	height:17px;
+	font-size:12px;
+	margin-bottom: 0px;
+}
+/*提示消息*/
+.msg{
+	margin: 3px;
+}
+#msg_content{
+	color:#F00;
+	font-size:12px;
+	margin-left: 10px;
+}
+/*必填项标识*/
+.required{
+	font-size: 12px;
+	color: #ff0000;
+	margin:0px;
+	margin-left: 5px !important;
+	padding: 0px;
+	display: inline;
+}
+/*表单*/
+#ff{
+	margin: 0px;
+	padding: 0px;	
+}

@@ -1,0 +1,109 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+#top{
+    background: #1a78c0;
+    height: 60px;
+}
+#logo{
+    margin: 5px 23px;
+}
+#split_bar{
+    background: #e4e4e4;
+    height: 24px;
+}
+#main{
+  
+}
+#main_tab{
+    border:0px solid #000;
+    margin-top: 50px;
+    width: 100%;
+}
+.main_left{
+    margin-left:20%;
+	margin-top:5%;
+	z-index:-1;}
+#footer{
+    background: #1a78c0;
+    height: 35px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    line-height: 35px;
+    color:#ffffff;
+}
+
+/*±íµ¥*/
+#title{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 32px;
+}
+#login{
+    background: url('../../images/login/loginarea_bg.png') no-repeat;
+    width: 402px;
+    height: 323px;
+    float: right;
+    margin-right:20%;
+    margin-top: 36px;
+    color:#1870b3;
+	z-index:1;
+}
+#login_form{
+    margin-top: 80px;
+    margin-left: 50px;
+    width: 350px;
+}
+.textinput{
+	border:none;
+	border-bottom:1px solid #b4b4b4;
+	width: 15em;
+	margin-top:12px;
+	font-size:14px;
+	text-indent:1em;
+	color:#1a78c0;
+	font-weight: bold;
+}
+.input-row,.button-row {
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin-right: 30px;
+}
+.input-row label {
+	margin-left:20px;
+	margin-top:9px;
+    width: 50px;
+    float: left;
+    font-weight: bold;
+}
+.input-row{
+	font-size:12px;
+ 	border:1px solid #cccccc;
+    height:39px;
+	line-height:32px;
+	margin: 10px;
+	margin-right: 30px;
+}
+.input-row .ctrl {
+    float: left;
+}
+.button-row{
+    margin-right:30px;
+	margin-top:30px;
+	float: right;
+}
+.formButton{
+	border:none;
+    width:130px;
+	height:34px;
+    line-height: 35px;
+    background: #1a78c0;
+    float: right;
+    color:#ffffff;
+    font-weight: bold;
+}
