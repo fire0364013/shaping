@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlList>
+	<!--add by wjy 2013-05-08 监测点编码的序列增长   oracle-->
+	<sql>
+		<id>GetMonitorpointcode</id>
+		<text>select  m.monitorpointcode 
+  from Monitorpoint m
+ where m.entid =?
+   and m.monitorpointcode like ?  
+   and m.monitorpointcode like ?
+ order by to_number(translate(m.monitorpointcode,
+                              &apos;0123456789&apos; || m.monitorpointcode,
+                              &apos;0123456789&apos;))  desc 
+</text>
+	</sql>
+ 	
+</sqlList>
+

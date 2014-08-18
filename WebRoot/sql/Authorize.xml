@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlList>
+	<!--add by wjy 2012-9-11 获得授权签字信息    oracle-->
+	<sql>
+		<id>GetAuthorize</id>
+		<text>select a, b, a.signatureuser, c, a.authorizedid, a.monitorpointtypeid
+  from (with test as
+        (select m.monitortypeid a, m.monitortypename b, m.monitorpointtype c
+           from MonitorType m) 　select a, b,
+        substr(t.ca,  
+               instr(t.ca, &apos;,&apos;, 1, c.lv) + 1,
+               instr(t.ca, &apos;,&apos;, 1, c.lv + 1) -
+               (instr(t.ca, &apos;,&apos;, 1, c.lv) + 1)) AS c from
+        (select a,
+                b,
+                &apos;,&apos; || c || &apos;,&apos; AS ca,
+                length(c || &apos;,&apos;) - nvl(length(REPLACE(c, &apos;,&apos;)) ， 0) AS cnt
+           FROM test) t, (select LEVEL lv from dual CONNECT BY LEVEL &lt;= 100) c
+        where c.lv &lt;= t.cnt)
+  left join authorizedsignature a on a = a.monitortypeid
+                                 and c = a.monitorpointtypeid
+                                where b like ? order by a, c desc
+</text>
+	</sql>
+ 	
+</sqlList>
+

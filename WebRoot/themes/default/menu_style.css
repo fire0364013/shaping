@@ -1,0 +1,98 @@
+
+#pending A {
+	font-size: 12px;
+	color: #009be3;
+	text-decoration: none;
+	padding-left: 34px;
+	cursor:pointer;
+}
+#pending A:link {
+	TEXT-DECORATION: none;
+	Color: #009be3;
+	cursor:pointer;	
+}
+#pending A:visited {
+	TEXT-DECORATION: none;
+	Color: #009be3;
+	cursor:pointer;	
+}
+#pending A:hover {
+	COLOR: #ed8d2e;
+	TEXT-DECORATION: none;
+	cursor:pointer;	
+}
+#pending A:active {
+	TEXT-DECORATION: none;
+	Color: #ed8d2e;
+	cursor:pointer;	
+}
+#menu {
+	width: 209px;
+	height: 100%;
+	position: absolute;
+	left: -210px
+}
+#hidmenu {
+	float: right;
+	height: 8px;
+	width: 11px;
+	margin-right: 20px;
+	margin-top: 16px;
+	cursor: pointer;
+}
+#showmenu {
+	position: absolute;
+	left: -1px;
+	top: 30px;
+	height: 53px;
+	width: 31px;
+	cursor: pointer;
+}
+.menu_title {
+	width: 209px;
+	height: 29px;
+	background: url(../images/menu_title.png) no-repeat;
+	font-size: 12px;
+	color: #FFF;
+	line-height: 29px;
+	padding-left: 40px;
+	font-weight: bold;
+}
+.menu_list_out {
+	width: 209px;
+	height: 35px;
+	line-height: 35px;
+	background: url(images/menu_child_mouse_out.png);
+}
+.menu_list_over {
+	width: 209px;
+	height: 35px;
+	line-height: 35px;
+	background: url(images/menu_child_mouse_over.png);
+}
+
+#remind{
+	width: 209px;
+	position: absolute;
+	left: -209px;
+	top:120px;
+}
+#hidremind{
+	float: right;
+	height: 8px;
+	width: 11px;
+	margin-right: 20px;
+	margin-top: 16px;
+	cursor: pointer;
+}
+.remind_num{
+font-size:12px; color:#F00; width:20px; padding-left:5px;
+}
+#showremind{
+	position: absolute;
+	left: -1px;
+	top: 400px;
+	height: 53px;
+	width: 31px;
+	cursor: pointer;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlList>
+	<!--add by cail 2012-9-15 样品接收  已接受样品 项目查询  oracle-->
+	<sql  >
+		<id>GetSampleItem</id>
+		<text> 
+			select m.itemname,m.samplecontainer,m.samplenum,m.unitid,m.isnowtest,m.methodname,m.FIXEDADDITIVE 
+			from (
+			    select ii.itemid,m.methodid,ii.itemname,ii.samplecontainer,ii.samplenum,ii.unitid,ii.isnowtest,ii.FIXEDADDITIVE,m.methodname 
+			    from iteminfo ii,itemmethod im,method m
+			    where ii.itemid = im.itemid
+			    and im.analysemethodid = m.methodid
+			) m inner join (
+			    select bn.itemid,bn.methodid from analyseset an inner join (
+			     select distinct b.itemid,b.methodid
+			     from samplecontainer a,sampleitem b
+			     where a.samplecode=b.samplecode and a.samplecode=?
+			    ) bn on an.itemid = bn.itemid and an.methodid = bn.methodid
+			    where an.deptid=? and an.groupid=?
+			) n on m.itemid = n.itemid and m.methodid = n.methodid  
+			order by m.itemname
+		</text>
+	</sql>
+	
+	
+</sqlList>
+

@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px;
+	background:url(../login_images/login_bg.png);
+}
+.top_light{
+	position:absolute;
+	width:100%;
+	height:174px;
+	background:url(../login_images/light_up.png) 40% no-repeat;
+}
+.bottom_light{
+	bottom:0px;
+	position:absolute;
+	width:100%;
+	height:174px;
+	background:url(../login_images/light_down.png) 40% no-repeat;
+}
+.sysName{
+	position:absolute;
+	top:40px;
+	z-index:99;
+	width:100%;
+	height:67px;
+	background:url(../login_images/sysname.png) 50% no-repeat;
+}
+.center_img{
+	position:absolute;
+	z-index:998;
+	top:-130px;
+	width:100%;
+	height:758px;
+	background:url(../login_images/center_img.png) 50% 10% no-repeat;
+}
+.copyright_1{
+	position:absolute;
+	z-index:97;
+	bottom:5px;
+	width:100%;
+	height:20px;
+	text-align:center;
+	font-size:12px;
+	color:#FFF;
+}
+.copyright_2{
+	position:absolute;
+	z-index:96;
+	bottom:6px;
+	width:100%;
+	height:20px;
+	text-align:center;
+	font-size:12px;
+	color:#014a89;
+}
+.login_main{
+	margin:0px auto;
+	margin-top:300px;
+	width:450px;
+	height:254px;
+	background:url(../login_images/input_area_bg.png) no-repeat;
+}
+.login_input_text{
+	height:37px;
+	width:259px;
+	line-height:37px;
+	background:url(../login_images/input_bg.png) no-repeat;
+	border:none;
+	padding-left:10px;
+	font-size:14px;
+	color:#031f41;
+	font-weight:bold;
+}
+.login_submit{
+	width:125px;
+	height:40px;
+	background:url(../login_images/btu_login.png) no-repeat;
+	cursor:pointer;
+	border:none;
+}
+.login_reset{
+	width:125px;
+	height:40px;
+	background:url(../login_images/btu_reset.png) no-repeat;
+	cursor:pointer;
+	border:none;
+}
+.login_table{
+	width:85%;
+	height:200px;
+	font-family:"微软雅黑";
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+}
+.login_table td{
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlList>
+<!-- 用于待办查询 chenxz -->
+	<sql>
+		<id>GetCurvePends</id>
+		<text>
+		  select a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid,drawdate   
+		   from (select a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid, max(c.drawdate) drawdate
+		    from itemmethod m,analyseset a,devicecalibratecurve c,(select itemid,methodid,userid from CERTIFICATEINFO  
+		    where userid=? ) ci    
+		    where m.analysemethodid=a.methodid and m.itemid=a.itemid and c.methodid=m.analysemethodid 
+		    and c.itemid=m.itemid and  c.methodid=a.methodid and c.itemid=a.itemid 
+		    and ci.userid=c.analyseperson and ci.itemid=c.itemid and ci.methodid=c.methodid  
+		    and c.analyseperson=?   and to_char(c.losedate,&apos;yyyy-mm-dd&apos;) &lt; to_char(sysdate,&apos;yyyy-mm-dd&apos;) 
+		    group by a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid ) a,
+		    (select * from usergroup g where g.userid=?) g    
+		    where  g.deptid=a.deptid and g.groupid=a.groupid 
+			<!--  select a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid,drawdate,losedate   
+		   from (select a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid, max(c.drawdate) drawdate,c.losedate
+		    from itemmethod m,analyseset a,devicecalibratecurve c,(select itemid,methodid,userid from CERTIFICATEINFO  
+		    where userid=? ) ci    
+		    where m.analysemethodid=a.methodid and m.itemid=a.itemid and c.methodid=m.analysemethodid 
+		    and c.itemid=m.itemid and  c.methodid=a.methodid and c.itemid=a.itemid 
+		    and ci.userid=c.analyseperson and ci.itemid=c.itemid and ci.methodid=c.methodid  
+		    and c.analyseperson=?    
+		    group by a.itemid,a.methodid,a.deptid,a.groupid,a.devicetypeid,c.losedate ) a,
+		    (select * from usergroup g where g.userid=?) g    
+		    where  g.deptid=a.deptid and g.groupid=a.groupid 
+			and to_char(losedate,&apos;yyyy-mm-dd&apos;) &lt; to_char(sysdate,&apos;yyyy-mm-dd&apos;)-->
+		</text>
+	</sql>
+ 	
+</sqlList>

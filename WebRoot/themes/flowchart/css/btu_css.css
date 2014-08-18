@@ -1,0 +1,540 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0px;
+}
+A {
+	font-size: 12px;
+	color: #009be3;
+	text-decoration: none;
+	padding-left: 20px;
+	cursor: pointer;
+}
+A:link {
+	TEXT-DECORATION: none;
+	Color: #009be3;
+	cursor: pointer;
+}
+A:visited {
+	TEXT-DECORATION: none;
+	Color: #009be3;
+	cursor: pointer;
+}
+A:hover {
+	COLOR: #ed8d2e;
+	TEXT-DECORATION: none;
+	cursor: pointer;
+}
+A:active {
+	TEXT-DECORATION: none;
+	Color: #ed8d2e;
+	cursor: pointer;
+}
+.remind_div {
+	position: absolute;
+	z-index: 99;
+	width: 230px;
+	height: 300px;/*设置整个待办事件窗口的高度*/
+	float: right;
+	top: 10px;
+	right: 10px;
+}
+.remind_top {
+	width: 230px;
+	height: 35px;
+	background: url(../images/remind_top.png) no-repeat;
+}
+.remind_main {
+	width: 230px;
+	height: 242px;/*设置整个待办事件列表背景的高度，这个div的存在是用于当列表数量不够出现滚动条时用于补齐背景的，这个高度是整个remind_div的高度减去remind_top和remind_bottom的高度得到的*/
+	background: url(../images/remind_bg.png) repeat-y;
+}
+#pending {
+	position: absolute;
+	top: 35px;
+	bottom: 23px;
+	width: 228px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.remind_child_out {
+	width: 230px;
+	height: 35px;
+	line-height: 35px;
+	background: url(../images/remind_child_out.png) no-repeat;
+}
+.remind_child_over {
+	width: 230px;
+	height: 35px;
+	line-height: 35px;
+	background: url(../images/remind_child_over.png) no-repeat;
+}
+.remind_bottom {
+	position: absolute;
+	bottom: 0px;
+	width: 230px;
+	height: 23px;
+	background: url(../images/remind_bottom.png) no-repeat;
+}
+.remind_num {
+	font-size: 12px;
+	color: #F00;
+	width: 20px;
+	padding-left: 5px;
+}
+.bg_img {
+	height: 100%;
+}
+#container-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 98;
+}
+.img_lc {
+	position: absolute;
+	left: -41.5px;
+	right: 0.5px;
+	top: 2.8px;
+	bottom: 0;
+	z-index: 99;
+	width: 1264px;
+ height::550px;
+	background: url(../images/lc_bg_5.png) no-repeat;
+}
+/*-------------按钮的样式------------------*/
+.btu_1 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 18px;
+	left: 21px;
+	display:none;
+	background: url(../images/btu_1.png) no-repeat;
+	z-index: 99;
+}
+.btu_2 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 119px;
+	left: 21px;
+	display:none;
+	background: url(../images/btu_2.png) no-repeat;
+	z-index: 99;
+}
+.btu_3 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 210px;
+	left: 108px;
+	display:none;
+	background: url(../images/btu_3.png) no-repeat;
+	z-index: 99;
+}
+.btu_4 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 118px;
+	left: 268px;
+	display:none;
+	background: url(../images/btu_4.png) no-repeat;
+	z-index: 99;
+}
+.btu_5 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 118px;
+	left: 430px;
+	display:none;
+	background: url(../images/btu_5.png) no-repeat;
+	z-index: 99;
+}
+.btu_6_1 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 118px;
+	left: 589px;
+	display:none;
+	background:url(../images/btu_6_1.png) no-repeat;
+	z-index: 99;
+}
+.btu_6 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 118px;
+	left: 749px;
+	display:none;
+	background: url(../images/btu_6.png) no-repeat;
+	z-index: 99;
+}
+.btu_7 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 118px;
+	left: 909px;
+	display:none;
+	background: url(../images/btu_7.png) no-repeat;
+	z-index: 99;
+}
+.btu_8 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 299px;
+	left: 263px;
+	display:none;
+	background: url(../images/btu_8.png) no-repeat;
+	z-index: 99;
+}
+.btu_9 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 305px;
+	left: 563px;
+	display:none;
+	background: url(../images/btu_9.png) no-repeat;
+	z-index: 99;
+}
+.btu_10 {
+	position: absolute;
+	width: 124px;
+	height: 46px;
+	top: 295px;
+	left: 716px;
+	display:none;
+	background: url(../images/btu_10.png) no-repeat;
+	z-index: 99;
+}
+.btu_11 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 309px;
+	left: 878px;
+	display:none;
+	background: url(../images/btu_11.png) no-repeat;
+	z-index: 99;
+}
+.btu_12 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 445px;
+	left: 878px;
+	display:none;
+	background: url(../images/btu_11_1.png) no-repeat;
+	z-index: 99;
+}
+.btu_13 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 445px;
+	left: 718px;
+	display:none;
+	background: url(../images/btu_12.png) no-repeat;
+	z-index: 99;
+}
+.btu_14 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 445px;
+	left: 555px;
+	display:none;
+	background: url(../images/btu_13.png) no-repeat;
+	z-index: 99;
+}
+.btu_15 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 445px;
+	left: 345px;
+	display:none;
+	background: url(../images/btu_14.png) no-repeat;
+	z-index: 99;
+}
+.btu_16 {
+	position: absolute;
+	width: 122px;
+	height: 30px;
+	top: 445px;
+	left: 138px;
+	display:none;
+	background: url(../images/btu_15.png) no-repeat;
+	z-index: 99;
+}
+/*---------------------------箭头的样式------------------------*/
+
+.arrow_1 {
+	position: absolute;
+	width: 17px;
+	height: 65px;
+	top: 50px;
+	left: 74px;
+	display:none;
+	background: url(../images/arrow_1.png) no-repeat;
+	z-index: 99;
+}
+.arrow_2 {
+	position: absolute;
+	width: 31px;
+	height: 79px;
+	top: 150px;
+	left: 75px;
+	display:none;
+	background: url(../images/arrow_2.png) no-repeat;
+	z-index: 99;
+}
+.arrow_3 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 151px;
+	left: 230px;
+	display:none;
+	background: url(../images/arrow_3.png) no-repeat;
+	z-index: 99;
+}
+.arrow_4 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 126px;
+	left: 392px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_5 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 131px;
+	left: 554px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_6_1 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top:131px;
+	left: 714px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_6 {
+	position: absolute;
+	width: 32px;
+	height: 15px;
+	top: 131px;
+	left: 876px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_7 {
+	position: absolute;
+	width: 172px;
+	height: 350px;
+	top: 125px;
+	left: 908px;
+	display:none;
+	background: url(../images/arrow_7.png) no-repeat;
+	z-index: 99;
+}
+.arrow_8 {
+	position: absolute;
+	width: 18px;
+	height: 107px;
+	top: 338px;
+	left: 932px;
+	display:none;
+	background: url(../images/arrow_8.png) no-repeat;
+	z-index: 99;
+}
+.arrow_9 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 320px;
+	left: 842px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_10 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 310px;
+	left: 686px;
+	display:none;
+	background: url(../images/arrow_4.png) no-repeat;
+	z-index: 99;
+}
+.arrow_11 {
+	position: absolute;
+	width: 178px;
+	height: 14px;
+	top: 318px;
+	left: 385px;
+	display:none;
+	background: url(../images/arrow_11.png) no-repeat;
+	z-index: 99;
+}
+.arrow_12 {
+	position: absolute;
+	width: 101px;
+	height: 72px;
+	top: 225px;
+	left: 230px;
+	display:none;
+	background: url(../images/arrow_15.png) no-repeat;
+	z-index: 99;
+}
+.arrow_13 {
+	position: absolute;
+	width: 108px;
+	height: 175px;
+	top: 147px;
+	left: 385px;
+	display:none;
+	background: url(../images/arrow_13.png) no-repeat;
+	z-index: 99;
+}
+.arrow_14 {
+	position: absolute;
+	width: 32px;
+	height: 15px;
+	top: 452px;
+	left: 843px;
+	display:none;
+	background: url(../images/arrow_16.png) no-repeat;
+	z-index: 99;
+}
+.arrow_15 {
+	position: absolute;
+	width: 83px;
+	height: 15px;
+	top: 460px;
+	left: 680px;
+	display:none;
+	background: url(../images/arrow_16.png) no-repeat;
+	z-index: 99;
+}
+.arrow_16 {
+	position: absolute;
+	width: 83px;
+	height: 15px;
+	top: 452px;
+	left: 468px;
+	display:none;
+	background: url(../images/arrow_10.png) no-repeat;
+	z-index: 99;
+}
+.arrow_17 {
+	position: absolute;
+	width: 83px;
+	height: 15px;
+	top: 452px;
+	left: 260px;
+	display:none;
+	background: url(../images/arrow_10.png) no-repeat;
+	z-index: 99;
+}
+/*---------------------------退回箭头的样式------------------------*/
+
+.arrow_f_1 {
+	position: absolute;
+	width: 374px;
+	height: 46px;
+	top: 475px;
+	left: 402px;
+	display:none;
+	background: url(../images/arrow_f_1.png) no-repeat;
+	z-index: 99;
+}
+.arrow_f_2 {
+	position: absolute;
+	width: 37px;
+	height: 22px;
+	top: 438px;
+	left: 680px;
+	display:none;
+	background: url(../images/arrow_f_3.png) no-repeat;
+	z-index: 99;
+}
+.arrow_f_3 {
+	position: absolute;
+	width: 37px;
+	height: 22px;
+	top: 297px;
+	left: 839px;
+	display:none;
+	background: url(../images/arrow_f_2.png) no-repeat;
+	z-index: 99;
+}
+.arrow_f_4 {
+	position: absolute;
+	width: 37px;
+	height: 22px;
+	top: 109px;
+	left:552px;
+	display:none;
+	background: url(../images/arrow_f_2.png) no-repeat;
+	z-index: 99;
+}
+.arrow_f_5 {
+	position: absolute;
+	width: 91px;
+	height: 158px;
+	top: 150px;
+	left: 385px;
+	display:none;
+	background: url(../images/arrow_f_5.png) no-repeat;
+	z-index: 99;
+}
+.arrow_f_7{
+	position: absolute;
+	width: 124px;
+	height: 96px;
+	top:345px;
+	left: 800px;
+	display:none;
+	background: url(../images/arrow_f_6.png) no-repeat;
+	z-index: 99;
+}
+/*<!--.arrow_f_6 {
+	position: absolute;
+	width: 374px;
+	height: 46px;
+	top: 145px;
+	left: 500px;
+
+	background: url(../images/arrow_ft_1.png) no-repeat;
+	z-index: 99;
+	}-->
+*/
+.arrow_f_6 {
+	position: absolute;
+	width: 37px;
+	height: 22px;
+	top: 109px;
+	left:872px;
+	display:none;
+	background: url(../images/arrow_f_2.png) no-repeat;
+	z-index: 99;
+}

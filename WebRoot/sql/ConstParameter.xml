@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ConstParameters>
+  <ConstParameter>
+    <id>委托流程编号</id>
+    <text>WT_PROJECT</text>
+  </ConstParameter>
+  <ConstParameter>
+    <id>三同时流程编号</id>
+    <text>STS1234</text>
+  </ConstParameter>
+  <ConstParameter>
+    <id>朱国英</id>
+    <text>STS1234</text>
+  </ConstParameter>
+  <ConstParameter>
+    <id>三</id>
+    <text>STS1234</text>
+  </ConstParameter>
+  <ConstParameter>
+    <id>三同程编号</id>
+    <text>STS1234</text>
+  </ConstParameter>
+  <ConstParameter>
+    <id>三同编号</id>
+    <text>STS454857234</text>
+  </ConstParameter>
+  <!-- lh 统计查询 -->
+  
+    <ConstParameter>
+    <id>环境空气统计类型</id>
+    <text>5</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>降水统计类型</id>
+    <text>6</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>降尘统计类型</id>
+    <text>7</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>硫酸盐化速率统计类型</id>
+    <text>8</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>地表水统计类型</id>
+    <text>9</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>功能区噪声</id>
+    <text>11</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>区域噪声</id>
+    <text>12</text>
+  </ConstParameter>
+  
+  <ConstParameter>
+    <id>道路交通噪声</id>
+    <text>13</text>
+  </ConstParameter>
+  <!-- lh 任务监测性质 -->
+   <ConstParameter>
+    <id>污染源监督监测</id>
+    <text>1</text>
+  </ConstParameter>
+  
+   <ConstParameter>
+    <id>环境质量监测</id>
+    <text>2</text>
+  </ConstParameter>
+ <!-- lh   end-->
+</ConstParameters>
+
