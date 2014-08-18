@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 上传文件大小设置为500M -->
+	<constant name="struts.multipart.maxSize" value="5000000000"/>
+	<!-- 字符过滤 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.convention.result.path" value="/WEB-INF/jsp" />
+	<!-- 指定默认的父包 -->
+	<constant name="struts.convention.default.parent.package" value="bolo-default" />
+	<!-- 设置convention插件默认的根包 -->
+	<constant name="struts.convention.package.locators" value="web" />
+	<!-- 搜索此配置下的所有包 -->
+	<constant name="struts.convention.package.locators.basePackage" value="com.beauty" />
+	<!-- 继承convention-default包，定义一个默认的拦截器，根据需要还可扩展 -->
+	<package name="bolo-default"  extends="convention-default,json-default">
+		<interceptors>
+			<!-- 登录验证拦截器 -->
+			<interceptor name="authority" class="com.beauty.common.interceptor.AuthorityInterceptor"></interceptor>
+			<interceptor-stack name="boloStack">
+			<!-- 将登录验证拦截器加入到默认的拦截器栈中 -->
+			    <interceptor-ref name="authority">
+			    <!-- 排除login方法(即不拦截该方法) -->
+			    	<param name="excludeMethods">welcome,login,valid</param>
+			    </interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+			
+		<default-interceptor-ref name="boloStack" />
+		
+		<global-results>
+			<result name="error">/common/error.jsp</result>
+			<result name="login">/jump.jsp</result>
+		</global-results> 
+	</package>
+</struts>

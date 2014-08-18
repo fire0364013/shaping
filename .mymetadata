@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="shaping"
+  id="myeclipse.1386660622437"
+  context-root="/shaping"
+  j2ee-spec="5.0"
+  archive="shaping.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
