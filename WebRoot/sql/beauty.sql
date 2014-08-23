@@ -1,4 +1,4 @@
-
+﻿
 -- ----------------------------
 -- Table structure for custom
 -- ----------------------------
@@ -903,3 +903,39 @@ INSERT INTO userroleinfo VALUES ('214', '147', '29');
 INSERT INTO userroleinfo VALUES ('215', '146', '30');
 INSERT INTO userroleinfo VALUES ('216', '148', '30');
 INSERT INTO userroleinfo VALUES ('217', '149', '32');
+
+
+-----zhangcd  2014.8.23 添加医美版本模块管理
+INSERT INTO moduleinfo VALUES ('1405', '医美版本管理', '14', '1', '/beauty/beautyversion/beautyversion!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10647', '19', '1405');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
