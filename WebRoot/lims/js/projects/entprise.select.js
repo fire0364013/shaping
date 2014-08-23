@@ -98,23 +98,23 @@ function initDataGrid2(){
 	});
 }
 
-//加载污染源类型下拉列表
-function getPollutionSourceType(){
-	$.ajax( {
-		type : 'GET',
-		url : rootPath + '/projects/taskregister/taskregister!getPollutionSourceType.action?timeStamp='+new Date().getTime()+'&monitortypeid='+monitortypeid,
-		success : function(data) {
-			var vData = eval("(" + data + ")");
-			var lList = "<option value=''>---请选择---</option>";
-			//遍历json数据  
-			jQuery.each(vData.rowsData, function(i, n) {
-				lList += "<option value=" + n.sourceid + ">" + n.sourcename	+ "</option>";
-			});				
-			//绑定数据到listLeft
-			$('#sourcetypecode').append(lList);
-		}
-	});
-}
+////加载污染源类型下拉列表
+//function getPollutionSourceType(){
+//	$.ajax( {
+//		type : 'GET',
+//		url : rootPath + '/projects/taskregister/taskregister!getPollutionSourceType.action?timeStamp='+new Date().getTime()+'&monitortypeid='+monitortypeid,
+//		success : function(data) {
+//			var vData = eval("(" + data + ")");
+//			var lList = "<option value=''>---请选择---</option>";
+//			//遍历json数据  
+//			jQuery.each(vData.rowsData, function(i, n) {
+//				lList += "<option value=" + n.sourceid + ">" + n.sourcename	+ "</option>";
+//			});				
+//			//绑定数据到listLeft
+//			$('#sourcetypecode').append(lList);
+//		}
+//	});
+//}
 
 
 //加载行政区的下拉列表
