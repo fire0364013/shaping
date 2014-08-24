@@ -909,6 +909,10 @@ INSERT INTO userroleinfo VALUES ('217', '149', '32');
 INSERT INTO moduleinfo VALUES ('1405', '医美版本管理', '14', '1', '/beauty/beautyversion/beautyversion!list.action', null,null, null);
 INSERT INTO moduleright VALUES ('10647', '19', '1405');
 
+-----zhangcd  2014.8.24 添加企业广告图片管理
+INSERT INTO moduleinfo VALUES ('1406', '企业广告图片', '14', '1', '/beauty/advertinfo/advertinfo!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10648', '19', '1406');
+
 
 
 
