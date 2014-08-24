@@ -1,4 +1,4 @@
-package com.beauty.biz.service.beauty;
+package com.beauty.biz.service.beautyinfo;
 
 import java.util.LinkedHashMap;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.beauty.biz.dao.beauty.BeautyversionDao;
-import com.beauty.biz.entity.beauty.Beautyversion;
+import com.beauty.biz.dao.beautyinfo.BeautyversionDao;
+import com.beauty.biz.entity.beautyinfo.Beautyversion;
 import com.beauty.common.page.QueryResult;
 
 @Service

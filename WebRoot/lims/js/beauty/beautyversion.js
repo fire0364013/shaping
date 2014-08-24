@@ -261,15 +261,21 @@ function detailbeautyinfo(id) {
 		autoOpen : false,
 		modal : true,
 		closed : true,
-		width : '700',
-		height : '500',
-		buttions:[{
-			text:'关闭',
-			iconCls:'icon-cancel',
-			handler:function(){
-				_dialog.dialog('close');
-			}
-		}],
+		width : '1050',
+		height : '550',
+		buttons:[{
+		text:'确定',
+		iconCls:'icon-save',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	},{
+		text:'取消',
+		iconCls:'icon-cancel',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	}],
 		onClose : function() {
 			_dialog.dialog("destroy");
 		}

@@ -1,4 +1,4 @@
-package com.beauty.biz.entity.beauty;
+package com.beauty.biz.entity.entpriseinfo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.beauty.biz.entity.beauty;
+package com.beauty.biz.entity.beautyinfo;
 
 import java.sql.Timestamp;
 import javax.persistence.Column;

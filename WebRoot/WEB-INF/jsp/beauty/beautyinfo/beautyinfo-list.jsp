@@ -55,7 +55,7 @@
 				</td>
 			</tr>
 		</table>
-		<div style="height: 620px;">
+		<div style="height: 400px;">
 			<table id="beautyinfogrid"></table>
 		</div>
 		<form id="methoddownload" method="post" >

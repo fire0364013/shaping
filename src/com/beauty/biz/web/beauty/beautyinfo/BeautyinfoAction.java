@@ -16,8 +16,8 @@ import net.sf.json.JSONArray;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.beauty.biz.entity.beauty.Beautyinfo;
-import com.beauty.biz.service.beauty.BeautyinfoManager;
+import com.beauty.biz.entity.beautyinfo.Beautyinfo;
+import com.beauty.biz.service.beautyinfo.BeautyinfoManager;
 import com.beauty.common.page.QueryResult;
 import com.beauty.common.utils.EasyStr;
 import com.beauty.common.utils.SearchUtil;

@@ -1,10 +1,17 @@
-package com.beauty.biz.entity.beauty;
+package com.beauty.biz.entity.entpriseinfo;
 
 import java.sql.Timestamp;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 /**
  * 应用版本表
@@ -26,7 +33,7 @@ public class Appversion implements java.io.Serializable {
 	private String appversionlog;//更新日志
 	private String appversionurl;//下载地址
 	private String releaser;//发布人员
-	private Timestamp releasedate;//发布日期
+	private Date releasedate;//发布日期
 	private String operator;//操作人员
 	private Timestamp operateDate;//操作日期
 	private String validstatus;//有效状态
@@ -117,12 +124,14 @@ public class Appversion implements java.io.Serializable {
 		this.releaser = releaser;
 	}
 
-	@Column(name = "releasedate", length = 19)
-	public Timestamp getReleasedate() {
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "releasedate", length = 7)
+	@NotFound(action=NotFoundAction.IGNORE)
+	public Date getReleasedate() {
 		return this.releasedate;
 	}
 
-	public void setReleasedate(Timestamp releasedate) {
+	public void setReleasedate(Date releasedate) {
 		this.releasedate = releasedate;
 	}
 

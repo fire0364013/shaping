@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,7 +16,6 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-import com.beauty.biz.entity.dictionary.Dictionaryinfo;
 
 
 /**
@@ -45,7 +45,11 @@ public class EntpriseInfo implements java.io.Serializable {
 	private Date practicedate; // 开业时间
 	private String remark; // 备注
 	private String linkman;// 联系人
-
+	
+	//新加 
+	private Appinfo appinfo;//app id
+	private String longitude;//经度
+	private String latitude;//纬度
 
 	/** default constructor */
 	public EntpriseInfo() {
@@ -227,5 +231,35 @@ public class EntpriseInfo implements java.io.Serializable {
 		this.linkman = linkman;
 	}
 
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "appinfoid")
+	@NotFound(action = NotFoundAction.IGNORE)
+	public Appinfo getAppinfo() {
+		return appinfo;
+	}
 
+	public void setAppinfo(Appinfo appinfo) {
+		this.appinfo = appinfo;
+	}
+
+	@Column(name = "longitude", length = 20)
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	@Column(name = "latitude", length = 20)
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+
+	
 }

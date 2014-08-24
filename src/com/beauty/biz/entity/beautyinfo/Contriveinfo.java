@@ -1,4 +1,4 @@
-package com.beauty.biz.entity.beauty;
+package com.beauty.biz.entity.beautyinfo;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;

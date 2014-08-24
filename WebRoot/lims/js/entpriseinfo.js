@@ -35,13 +35,13 @@ function initDataGrid(){
 			        {field:'entname',title:'企业名称',width:300,align : 'center'},					
 					{field:'region',title:'行政区',width:150,align : 'center'},
 					{field:'pollutionsourcetype',title:'企业类型',width:150,align : 'center'},
-					//{field:'scale',title:'企业规模',width:160,align : 'center'},
-					//{field:'industry',title:'行业类型',width:180,align : 'center'},
+					{field:'appinfoname',title:'App名称',width:160,align : 'center'},
 					{field:'operate',title:'操作',width:150,align : 'center',
 						formatter:function(value,rowData,rowIndex){
 							return '<span style="color:red"><img src="'+rootPath+'/themes/default/images/xiangxiimage.png" alt="详细" onclick="viewEntpriseinfo('+rowData.entid+')"/>&nbsp; ' +
 							'<img src="'+rootPath+'/themes/default/images/bianjiimage.png" alt="编辑" onclick="editEntpriseinfo('+rowData.entid+')"/> &nbsp;' +
-							'<img src="'+rootPath+'/themes/default/images/deleteimage.png" alt="删除" onclick="deleteEntpriseinfo(\''+rowData.entid+ '\',\''+ rowIndex+'\')"/>&nbsp; ' ;
+							'<img src="'+rootPath+'/themes/default/images/deleteimage.png" alt="删除" onclick="deleteEntpriseinfo(\''+rowData.entid+ '\',\''+ rowIndex+'\')"/>&nbsp; ' +
+							'<img src="'+rootPath+'/themes/default/images/autofill.png" alt="App信息" onclick="editApp('+rowData.entid+')"/> &nbsp;' ;
 						}
 					}					
 				]],
@@ -440,4 +440,34 @@ function grandsonIndustryData() {
 			$("#IndustryFrame",top.document.body).contents().find('#grandsonIndustry').append(lList);
 		}
 	});
+}
+
+function editApp(entid){
+	var url = rootPath + "/entpriseinfo/appversion/appversion!list.action";
+	var _dialog =  window.top.$('<div id ="entpriseinfo-dlg" style="padding:0px;"><iframe id="AppFrame" width="100%" height="100%" frameborder="0" scrolling="no" src='+url+'></iframe></div>').appendTo(window.top.document.body);
+	_dialog.dialog({
+	title:'App 版本',
+	autoOpen:false,
+	modal:true,
+	closed:true,
+	width:'1050',
+	height:'550',
+	buttons:[{
+		text:'确定',
+		iconCls:'icon-save',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	},{
+		text:'取消',
+		iconCls:'icon-cancel',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	}],
+	onClose:function(){
+			_dialog.dialog("destroy");					
+		}
+	});
+	_dialog.dialog('open');
 }

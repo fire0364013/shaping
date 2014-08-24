@@ -13,8 +13,8 @@ function initDataGrid() {
 						fit : true,
 						fitColumns : true,
 						scrollbarSize : 0,
-						pageSize : 20,
-						pageList : [ 20, 30, 40, 50 ],
+						pageSize : 10,
+						pageList : [ 10, 15, 20, 25 ],
 						frozenColumns : [ [ {
 							field : 'beautyinfoid',
 							checkbox : true,

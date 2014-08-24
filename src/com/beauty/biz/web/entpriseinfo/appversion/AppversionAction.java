@@ -1,4 +1,4 @@
-package com.beauty.biz.web.beauty.beautyversion;
+package com.beauty.biz.web.entpriseinfo.appversion;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,31 +12,26 @@ import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.beauty.biz.entity.beautyinfo.Beautyversion;
-import com.beauty.biz.service.beautyinfo.BeautyversionManager;
+import com.beauty.biz.entity.entpriseinfo.Appversion;
+import com.beauty.biz.service.entpriseinfo.AppversionManager;
 import com.beauty.common.page.QueryResult;
 import com.beauty.common.utils.EasyStr;
 import com.beauty.common.utils.SearchUtil;
+import com.beauty.common.utils.SessionUser;
 import com.beauty.common.web.StrutsAction;
 
-/**
- * 医美版本表
- * @author bing
- *
- */
-public class BeautyversionAction extends StrutsAction<Beautyversion> {
+public class AppversionAction extends StrutsAction<Appversion>{
 
-	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String rows;
 	private String page;
-	private String entname;
+	private String appversionname;
 
 	@Autowired
-	private BeautyversionManager beautyversionManager;
+	private AppversionManager appversionManager;
 	
 	/**
 	 * 跳转list页面
@@ -53,7 +48,7 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 				: page);
 		// 每页多少行
 		int maxIndex = Integer
-				.parseInt((rows == null || rows == "0") ? "20"
+				.parseInt((rows == null || rows == "0") ? "10"
 						: rows);
 		// 开始页
 		int startIndex = (intPage - 1) * maxIndex;
@@ -61,33 +56,33 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 		StringBuilder whereSB = new StringBuilder();
 		List<Object> params = new ArrayList<Object>();
 		LinkedHashMap<String, String> orderby = new LinkedHashMap<String, String>();
-		orderby.put("operatedate", "desc");
+		orderby.put("releasedate", "desc");
 		SearchUtil.getStringSearch(whereSB, params, "validstatus", "=",
 				"1");
-		if(entname != null && !"".equals(entname)){
-			SearchUtil.getStringSearch(whereSB, params, "entprise.entname", "like",
-				"%"+this.entname+"%");
+		if(appversionname != null && !"".equals(appversionname)){
+			SearchUtil.getStringSearch(whereSB, params, "appversionname", "like",
+				"%"+appversionname+"%");
 		}
 		// ============================2：原生实体SQL==============================="
-		QueryResult<Beautyversion> q;
+		QueryResult<Appversion> q;
 		try {
-			q = beautyversionManager.getQueryResult(startIndex, maxIndex, whereSB
+			q = appversionManager.getQueryResult(startIndex, maxIndex, whereSB
 					.toString(), params.toArray(), orderby);
 			// 总条数
 			long total = q.getTotalrecord();
 			List<Map<String, Object>> rowslist = new ArrayList<Map<String, Object>>();
 			// QueryResult里封装的list
-			List<Beautyversion> beautyversionList = q.getResultlist();
-			for (Beautyversion beautyversion : beautyversionList) {
+			List<Appversion> appversionList = q.getResultlist();
+			for (Appversion appversion : appversionList) {
 
 				// 列表要显示的字段及值
 				Map<String, Object> map = new HashMap<String, Object>();
-				map.put("beautyversionid", beautyversion.getBeautyversionid());
-				map.put("entname", beautyversion.getEntprise()==null?"":beautyversion.getEntprise().getEntname());
-				map.put("versioninfo", beautyversion.getVersioninfo()==null?"":beautyversion.getVersioninfo());
-				map.put("operator", beautyversion.getOperator()==null?"":beautyversion.getOperator());
-				map.put("operatedate", EasyStr.getDate(beautyversion.getOperatedate()));
-				map.put("mobilephone", beautyversion.getMobilephone()==null?"":beautyversion.getMobilephone());
+				map.put("appversionid", appversion.getAppversionid());
+				map.put("appversionnumber", appversion.getAppversionnumber()==null?"":appversion.getAppversionnumber());
+				map.put("appversionname", appversion.getAppversionname()==null?"":appversion.getAppversionname());
+				map.put("appversionurl", appversion.getAppversionurl()==null?"":appversion.getAppversionurl());
+				map.put("releasedate", EasyStr.getDate(appversion.getReleasedate()));
+				map.put("releaser", appversion.getReleaser()==null?"":appversion.getReleaser());
 				rowslist.add(map);
 			}
 			Map<String, Object> mapall = new HashMap<String, Object>();
@@ -103,14 +98,22 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 	
 	public String save() throws IOException {
 		try{
-		 if(entity.getBeautyversionid()==null || "".equals(entity.getBeautyversionid())){
-			 id = beautyversionManager.getId();
-			 entity.setOperatedate(new Date());
-			 entity.setBeautyversionid(id);
-			 beautyversionManager.saveorupadate(entity);
+		 if(entity.getAppversionid()==null || "".equals(entity.getAppversionid())){
+			 id = appversionManager.getId();
+			 entity.setReleasedate(new Date());
+			 SessionUser user = getSessionUser();
+			 if(user != null){
+				 entity.setReleaser(user.getRealname());
+			 }
+			 entity.setAppversionid(id);
+			 appversionManager.save(entity);
 		 }else{
-			 entity.setOperatedate(new Date());
-			 beautyversionManager.saveorupadate(entity);
+			 entity.setReleasedate(new Date());
+			 SessionUser user = getSessionUser();
+			 if(user != null){
+				 entity.setReleaser(user.getRealname());
+			 }
+			 appversionManager.save(entity);
 		 }
 		 sendMsg("success");
 		}catch(Exception e){
@@ -122,10 +125,10 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 	
 	public String delete() throws IOException{
 		try{
-		entity = beautyversionManager.getById(id);
+		entity = appversionManager.getById(id);
 		if(entity != null){
 			entity.setValidstatus("0");
-			beautyversionManager.saveorupadate(entity);
+			appversionManager.save(entity);
 		}
 		sendMsg("success");
 		}catch(Exception e){
@@ -140,10 +143,10 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 		String idd = getRequest().getParameter("ids");
 		String[] ids = idd.split(",");
 		for(String id :ids){
-			entity = beautyversionManager.getById(id);
+			entity = appversionManager.getById(id);
 			if(entity != null){
 				entity.setValidstatus("0");
-				beautyversionManager.saveorupadate(entity);
+				appversionManager.save(entity);
 			}
 		}
 		sendMsg("success");
@@ -170,13 +173,13 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 		this.page = page;
 	}
 
-	public String getEntname() {
-		return entname;
+	public String getAppversionname() {
+		return appversionname;
 	}
 
-	public void setEntname(String entname) {
-		this.entname = entname;
+	public void setAppversionname(String appversionname) {
+		this.appversionname = appversionname;
 	}
-	
+
 	
 }
