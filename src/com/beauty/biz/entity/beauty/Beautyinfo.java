@@ -12,6 +12,11 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
+/**
+ * 医美图片表
+ * @author bing
+ *
+ */
 @Entity
 @Table(name = "beautyinfo")
 public class Beautyinfo {

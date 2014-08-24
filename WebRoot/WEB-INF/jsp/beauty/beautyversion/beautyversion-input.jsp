@@ -31,7 +31,7 @@
 					<td align="left" class="Main_Tab_Style_Content" >
 						<input type="hidden" id="entid" name="entprise.entid" value="${entprise.entid}" />
 						<input type="text" id="entname" name="entprise.entname" value="${entprise.entname}" style="width: 500px ;height: 25px;" onclick="selectEntinfo()"
-						class="TextBoxPic easyui-validatebox" required="true" missingMessage="企业不能为空！"  style="width: 120px ;height: 20px;" /><font color="red" size="4px"> *</font>
+						class="TextBoxPic easyui-validatebox" required="true" missingMessage="企业不能为空！" /><font color="red" size="4px"> *</font>
 					</td>
 				</tr>
 			    <tr>
