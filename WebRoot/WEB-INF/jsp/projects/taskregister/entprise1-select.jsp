@@ -17,8 +17,8 @@
 			var entid = "${id}";
 			$(document).ready(function(){
 				initDataGrid1();
-				getPollutionSourceType();
-				regionData();
+				//getPollutionSourceType();
+			//	regionData();
 			});		
 		</script>	
 		<script type="text/javascript" src="${ctx}/lims/js/projects/entprise.select.js"></script>

@@ -29,7 +29,7 @@ function initDataGrid(){
 							formatter:function(value,rec,rowIndex){
 								var links='<img src="'+rootPath +'/themes/default/images/xiangxiimage.png" id="btnshow" onclick="detail('+ rec.deviceid +')" alt="详情"/>&nbsp;&nbsp;';
 								links+='<img src="'+rootPath +'/themes/default/images/bianjiimage.png" id="btnshow" onclick="addWin('+ rec.deviceid +')" alt="编辑"/>&nbsp;&nbsp;';
-								links+='<img src="'+rootPath +'/themes/default/images/deleteimage.png"" id="btnshow" onclick="del(\''+rec.deviceid+ '\','+rowIndex+')" alt="删除"/>'; 
+								links+='<img src="'+rootPath +'/themes/default/images/deleteimage.png" id="btnshow" onclick="del(\''+rec.deviceid+ '\','+rowIndex+')" alt="删除"/>'; 
 								
 								return links;
 							}
