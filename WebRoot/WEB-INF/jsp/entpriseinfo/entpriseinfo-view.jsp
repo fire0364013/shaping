@@ -195,7 +195,7 @@
 						</s:select>
 					</td>					
 				</tr>
-				<!-- 
+				
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
 						style="width: 150px; height: 20px;">
@@ -213,7 +213,8 @@
 						<s:textfield name="latitude" cssClass="TextBox"
 							cssStyle="width: 240px;height:20px" theme="simple"></s:textfield>
 					</td>
-				</tr>				
+				</tr>		
+				<!-- 		
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
 						style="width: 150px; height: 20px;">

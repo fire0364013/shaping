@@ -141,7 +141,7 @@
 					</td>
 					<td align="left" class="Main_Tab_Style_Content" width="230px">
 						<s:textfield name="organizationcode" cssClass="TextBox grkj-validate" 
-							cssStyle="width: 227px;height:20px"
+							cssStyle="width: 225px;height:20px"
 							validateParam="{type:'string',maxLength:'40',required:'false',message:'长度不超过40个字符！'}"
 							theme="simple"></s:textfield>
 						<font color="red" size="2px">*</font>	
@@ -231,6 +231,28 @@
 						</s:select>
 					</td>					
 					</tr>
+					<tr>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 147px; height: 20px;">
+						经度：
+					</td>
+					<td align="left" class="Main_Tab_Style_Content" width="230px">
+						<s:textfield name="longitude" cssClass="TextBox  grkj-validate"
+						validateParam="{type:'double',required:'false',maxLength:'999999'}"
+							cssStyle="width: 227px;height:20px" theme="simple"></s:textfield>
+					</td>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 147px; height: 20px;">
+						纬度：
+					</td>
+			
+					<td align="left" class="Main_Tab_Style_Content" width="230px">
+						<s:textfield name="latitude" cssClass="TextBox  grkj-validate"
+						validateParam="{type:'double',required:'false',maxLength:'999999'}"
+							cssStyle="width: 227px;height:20px" theme="simple"></s:textfield>
+
+					</td>
+				</tr>			
 					<!-- 
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
@@ -254,28 +276,7 @@
 					</td>			
 
 						</tr>
-				<tr>
-					<td align="left" class="Main_Tab_Style_title"
-						style="width: 147px; height: 20px;">
-						经度：
-					</td>
-					<td align="left" class="Main_Tab_Style_Content" width="230px">
-						<s:textfield name="longitude" cssClass="TextBox  grkj-validate"
-						validateParam="{type:'double',required:'false',maxLength:'999999'}"
-							cssStyle="width: 227px;height:20px" theme="simple"></s:textfield>
-					</td>
-					<td align="left" class="Main_Tab_Style_title"
-						style="width: 147px; height: 20px;">
-						纬度：
-					</td>
-			
-					<td align="left" class="Main_Tab_Style_Content" width="230px">
-						<s:textfield name="latitude" cssClass="TextBox  grkj-validate"
-						validateParam="{type:'double',required:'false',maxLength:'999999'}"
-							cssStyle="width: 227px;height:20px" theme="simple"></s:textfield>
-
-					</td>
-				</tr>						
+							
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
 						style="width: 147px; height: 20px;">

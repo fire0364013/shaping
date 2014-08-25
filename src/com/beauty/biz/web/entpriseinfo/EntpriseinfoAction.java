@@ -38,7 +38,9 @@ import com.beauty.biz.service.entpriseinfo.ScaleManager;
 		@Result(name = StrutsAction.INPUT, location = "entpriseinfo-input.jsp"),
 		@Result(name = StrutsAction.LIST, location = "entpriseinfo-list.jsp"),
 		@Result(name = StrutsAction.VIEW, location = "entpriseinfo-view.jsp"),
-		@Result(name = StrutsAction.RELOAD, location = "entpriseinfo.action", type = StrutsAction.REDIRECT), })
+		@Result(name = StrutsAction.RELOAD, location = "entpriseinfo.action", type = StrutsAction.REDIRECT),
+		@Result(name = "toApppage",location ="appversion-list.jsp")
+})
 public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 	private static final long serialVersionUID = -8211124630488056735L;
 
@@ -105,12 +107,19 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 			List<Object> params = new ArrayList<Object>();
 			LinkedHashMap<String, String> orderby = new LinkedHashMap<String, String>();
 			orderby.put("entname", "asc");
-			SearchUtil.getStringSearchByLower(whereSB, params, "entname",
-					"like", entname);
-			SearchUtil.getStringSearch(whereSB, params,
-					"region.regioncode", "=", regioncode);
-			SearchUtil.getStringSearch(whereSB, params,
-					"pollutionsourcetype.sourcetypecode", "=", sourcetype);
+			if(entname != null && !"".equals(entname)){
+				SearchUtil.getStringSearchByLower(whereSB, params, "entname",
+						"like", entname);
+			}
+			if(regioncode != null && !"".equals(regioncode)){
+				SearchUtil.getStringSearch(whereSB, params,
+						"region.regioncode", "=", regioncode);
+			}
+			if(sourcetype != null && !"".equals(sourcetype)){
+				SearchUtil.getStringSearch(whereSB, params,
+						"pollutionsourcetype.sourcetypecode", "=", sourcetype);
+			}
+			
 //			SearchUtil.getStringSearch(whereSB, params, "region.regioncode",
 //					"=", regioncode);
 			if (null != entids && !"".equals(entids)) {
@@ -146,6 +155,8 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 						.getLinkman() : "");
 				map.put("telphone", entInfo.getTelphone() != null ? entInfo
 						.getTelphone() : "");
+				map.put("appinfoname", entInfo.getAppinfo()==null?"":
+					entInfo.getAppinfo().getAppinfoname()==null?"":entInfo.getAppinfo().getAppinfoname());
 				rowData.add(map);
 			}
 			Map<String, Object> map = new HashMap<String, Object>();
@@ -390,6 +401,14 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 		} else {
 			sendMsg("error");
 		}
+	}
+	
+	/**
+	 * 跳转到App页面
+	 * @return
+	 */
+	public String toApppage(){
+		return "toApppage";
 	}
 
 	public List<Scale> getScaleList() {
