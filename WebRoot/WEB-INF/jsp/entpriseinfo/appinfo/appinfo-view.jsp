@@ -31,46 +31,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table width="100%" border="0" class="Main_Tab_Style">
 				<tr>						
 					<td align="left" class="Main_Tab_Style_title"  style="width: 120px ;height: 20px;">
-						版本名称：
+						应用名称：
 					</td>
 					<td align="left" class="Main_Tab_Style_Content" >
-						<input type="text" id="appversionname" name="appversionname" value="${appversionname}" style="width: 500px ;height: 25px;" 
-						class="TextBox easyui-validatebox" required="true" missingMessage="名称不能为空！" disabled />
-					</td>
-				</tr>
-			    <tr>
-					<td align="left" class="Main_Tab_Style_title" >
-						版本序号：
-					</td>
-					<td align="left" class="Main_Tab_Style_Content">
-						<input type="text" id="appversionnumber" name="appversionnumber" value="${appversionnumber}" style="width: 500px ;height: 25px;" 
-						class="TextBox easyui-validatebox" required="true" missingMessage="名称不能为空！" disabled />
+						<input type="text" id="appinfoname" name="appinfoname" value="${appinfoname}" style="width: 400px ;height: 25px;" disabled
+						class="TextBox easyui-validatebox" required="true" missingMessage="名称不能为空！" /><font color="red" size="4px"> *</font>
 					</td>
 				</tr>
 				 <tr>
-					<td align="left" class="Main_Tab_Style_title" >
-						下载地址：
-					</td>
-					<td align="left" class="Main_Tab_Style_Content">
-						<input type="text" id="appversionurl" name="appversionurl" value="${appversionurl}"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" required="true" missingMessage="下载地址不能为空！" disabled />
-				</tr><!--
-				 <tr>
-					<td align="left" class="Main_Tab_Style_title" >
-						联系电话：
-					</td>
-					<td align="left" class="Main_Tab_Style_Content">
-						<input type="text" id="appversionlog" name="appversionlog" value="${appversionlog }"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" required="true" missingMessage="电话不能为空！"/><font color="red" size="4px"> *</font>
-					</td>
-				</tr>
-				 --><tr>
 					<td align="left" class="Main_Tab_Style_title" >
 						备注：
 					</td>
 					<td>
-						<textarea  name="remark" class="TextBox grkj-validate"  style="width: 500px; height: 60px;" disabled
-							validateParam="{type:'string',required:'false',maxLength:'500',message:'备注不能超过100个汉字！'}">${remark}</textarea>
+						<textarea  name="remark" class="TextBox grkj-validate"  style="width: 400px; height: 60px;" disabled
+							validateParam="{type:'string',required:'false',maxLength:'200',message:'备注不能超过100个汉字！'}">${remark}</textarea>
 					</td>
 				</tr>
 			</table>

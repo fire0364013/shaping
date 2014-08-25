@@ -241,4 +241,42 @@ function ExportExcel() {
 			$("#exportExcel").submit();	
 }
 
-
+//姓名的弹出窗口使用selectedUserid
+function showName(){
+	var url =  rootPath +"/employeeinfo/employeeinfo!toSelectEmployee.action";
+	var _dialog =  window.top.$('<div id ="cert-dlg" style="padding:0px;"><iframe id="ItemFrame" width="100%" height="100%" frameborder="0" scrolling="no" src='+url+'></iframe></div>').appendTo(window.top.document.body);
+	_dialog.dialog({
+		title:'选择人员',
+		autoOpen:false,
+		modal:true,
+		closed:true,
+		width:'800',
+		height:'500',
+		buttons:[{
+			text:'确定',
+			iconCls:'icon-save',
+			handler:function(){
+			$('#stationno').val("");
+			$('#stationno').removeAttr("readonly");
+			var val=$("#ItemFrame",top.document.body).contents().find("#selectedUser").val();
+			$("#username").val(val);
+			var userids=$("#ItemFrame",top.document.body).contents().find("#selectedUserid").val();
+			$("#userids").val(userids);	
+			
+			_dialog.dialog('close');
+				
+			}
+		},{
+			text:'取消',
+			iconCls:'icon-cancel',
+			handler:function(){
+				_dialog.dialog('close');
+			}
+		}],
+		onClose:function(){
+			_dialog.dialog("destroy");
+			
+		}
+	});
+	_dialog.dialog('open');	
+}

@@ -75,7 +75,7 @@
 							是否发布：
 						</td>
 						<td align="left" class="Main_Tab_Style_Content">
-							<input type="radio" id="releaseFlag" name="releaseFlag" value="1" />是
+							<input type="radio" id="releaseFlag" name="releaseFlag" value="1" checked="checked"/>是
 							<input type="radio" id="releaseFlag" name="releaseFlag" value="0" />否
 						</td>	
 						<td><font color="red" size="4px"> *</font></td>				

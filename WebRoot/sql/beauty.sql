@@ -905,13 +905,21 @@ INSERT INTO userroleinfo VALUES ('216', '148', '30');
 INSERT INTO userroleinfo VALUES ('217', '149', '32');
 
 
------zhangcd  2014.8.23 添加医美版本模块管理
+-- ---zhangcd  2014.8.23 添加医美版本模块管理
 INSERT INTO moduleinfo VALUES ('1405', '医美版本管理', '14', '1', '/beauty/beautyversion/beautyversion!list.action', null,null, null);
 INSERT INTO moduleright VALUES ('10647', '19', '1405');
 
------zhangcd  2014.8.24 添加企业广告图片管理
+-- ---zhangcd  2014.8.24 添加企业广告图片管理
 INSERT INTO moduleinfo VALUES ('1406', '企业广告图片', '14', '1', '/beauty/advertinfo/advertinfo!list.action', null,null, null);
 INSERT INTO moduleright VALUES ('10648', '19', '1406');
+
+-- ---zhangcd  2014.8.25 添加app应用管理
+INSERT INTO moduleinfo VALUES ('1407', 'App应用管理', '14', '1', '/entpriseinfo/appinfo/appinfo!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10649', '19', '1407');
+-- ---员工项目管理
+INSERT INTO moduleinfo VALUES ('1408', '员工项目管理', '14', '1', '/iteminfo/employeeitem/employeeitem!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10650', '19', '1408');
+
 
 
 

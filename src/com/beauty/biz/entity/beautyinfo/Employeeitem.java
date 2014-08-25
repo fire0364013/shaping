@@ -2,8 +2,17 @@ package com.beauty.biz.entity.beautyinfo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
+import com.beauty.biz.entity.Employeeinfo;
+import com.beauty.biz.entity.iteminfo.Iteminfo;
 
 /**
  * 员工项目表
@@ -20,8 +29,8 @@ public class Employeeitem implements java.io.Serializable {
 	// Fields
 
 	private String employeeitemid;//员工项目id
-	private String employeeid;//员工id
-	private String itemid;//项目id
+	private Employeeinfo employeeid;//员工id
+	private Iteminfo itemid;//项目id
 	private String bewrite;//描述
 	private String isgoldmedal;//是否金牌项目
 	private String grade;//评分
@@ -39,19 +48,6 @@ public class Employeeitem implements java.io.Serializable {
 		this.employeeitemid = employeeitemid;
 	}
 
-	/** full constructor */
-	public Employeeitem(String employeeitemid, String employeeid,
-			String itemid, String bewrite, String isgoldmedal, String grade,
-			String validstatus, String remark) {
-		this.employeeitemid = employeeitemid;
-		this.employeeid = employeeid;
-		this.itemid = itemid;
-		this.bewrite = bewrite;
-		this.isgoldmedal = isgoldmedal;
-		this.grade = grade;
-		this.validstatus = validstatus;
-		this.remark = remark;
-	}
 
 	// Property accessors
 	@Id
@@ -64,21 +60,23 @@ public class Employeeitem implements java.io.Serializable {
 		this.employeeitemid = employeeitemid;
 	}
 
-	@Column(name = "employeeid", length = 20)
-	public String getEmployeeid() {
-		return this.employeeid;
-	}
+//	@Column(name = "employeeid", length = 20)
+//	public String getEmployeeid() {
+//		return this.employeeid;
+//	}
+//
+//	public void setEmployeeid(String employeeid) {
+//		this.employeeid = employeeid;
+//	}
 
-	public void setEmployeeid(String employeeid) {
-		this.employeeid = employeeid;
-	}
-
-	@Column(name = "itemid", length = 20)
-	public String getItemid() {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "itemid")
+	@NotFound(action = NotFoundAction.IGNORE)
+	public Iteminfo getItemid() {
 		return this.itemid;
 	}
 
-	public void setItemid(String itemid) {
+	public void setItemid(Iteminfo itemid) {
 		this.itemid = itemid;
 	}
 
@@ -126,5 +124,18 @@ public class Employeeitem implements java.io.Serializable {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "employeeid")
+	@NotFound(action = NotFoundAction.IGNORE)
+	public Employeeinfo getEmployeeid() {
+		return employeeid;
+	}
+
+	public void setEmployeeid(Employeeinfo employeeid) {
+		this.employeeid = employeeid;
+	}
+	
+	
 
 }

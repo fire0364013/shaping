@@ -44,6 +44,7 @@ import com.beauty.common.web.StrutsAction;
 		@Result(name = "input", location = "employee-input.jsp"),
 		@Result(name = StrutsAction.VIEW, location = "employee-view.jsp"),
 		@Result(name = "list", location = "employee-list.jsp"),
+		@Result(name = "toSelectEmployee",location = "employee-oneuser.jsp"),
 		@Result(name = StrutsAction.RELOAD, location = "employeeinfo.action", type = StrutsAction.REDIRECT), })
 public class EmployeeinfoAction extends StrutsAction<Employeeinfo> {
 	private static final long serialVersionUID = 6766745021420627475L;
@@ -185,6 +186,72 @@ public class EmployeeinfoAction extends StrutsAction<Employeeinfo> {
 		return null;
 	}
 
+	/**
+	 * 查询流程定义列表
+	 * 
+	 * @param mapping
+	 * @param form
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	public String toOneAndManyList() throws Exception {
+		int intPage = Integer.parseInt((page == null || page == "0") ? "1"
+				: page);
+		int maxIndex = Integer.parseInt((rows == null || rows == "0") ? "10"
+				: rows);
+		int startIndex = (intPage - 1) * maxIndex;
+		LinkedHashMap<String, String> orderby = new LinkedHashMap<String, String>();
+		orderby.put("e.employeeinfoid", "asc");// 再根据部门人员名字排序
+
+		List<Object> paramValues = new ArrayList<Object>();
+
+		String whereSQL = "1=1 ";
+		if (null != employeeinfoname && !"".equals(employeeinfoname)) {
+			whereSQL += " and e.employeeinfoname like ?";
+			paramValues.add("%" + employeeinfoname + "%");
+		}
+		//只能看到本单位的客户
+		whereSQL += " and e.entid ='"+getSessionUser().getEntid()+"' ";
+		String fieldSQL = "e.employeeinfoid,e.employeeinfoname,e.sex,e.status,e.mobilephone";
+		String tableSQL = "";
+		tableSQL = " Employeeinfo e ";// hql
+		QueryResult<Object[]> q;
+		try {
+			q = employeeinfoManager.getScrollDateByHQL(startIndex, maxIndex,
+					fieldSQL, tableSQL, whereSQL, paramValues.toArray(),
+					orderby);
+			long total = q.getTotalrecord();
+			List<Map<String, Object>> rows2 = new ArrayList<Map<String, Object>>();
+			List<Object[]> employeeList = q.getResultlist();
+			// jquery easyui 需要返回的结果集 select * from userinfo u left join
+			// employeeinfo e on u.userid=e.userid
+			for (int i = 0; i < employeeList.size(); i++) {
+				// 列表要显示的字段及值
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("employeeinfoid", employeeList.get(i)[0]);// 人员编号
+//				map.put("userid", employeeList.get(i)[1]);// 用户编号--->> 获得用户的登陆名
+//															// 部门编号，部门名称
+//				map.put("departname", employeeList.get(i)[2]);// 获得用户部门
+				map.put("employeeinfoname", employeeList.get(i)[1]);// //用户姓名
+				map.put("sex", employeeList.get(i)[2]);// 职务
+				map.put("isjob", employeeList.get(i)[3]);// 是否在职//在岗、离职、外聘
+				map.put("mobilephone", employeeList.get(i)[4]);//简称
+				rows2.add(map);
+			}
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("total", total);// jquery easyui 需要的总记录数
+			map.put("rows", rows2);// jquery easyui 需要的结果集
+			String first = JSONArray.fromObject(map).toString();//
+			String jsonString = first.substring(1, first.length() - 1);// 去掉“[”和“]”
+			getResponse().getWriter().write(jsonString);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
 	/**
 	 * 删除一条数据
 	 * 
@@ -499,6 +566,11 @@ public class EmployeeinfoAction extends StrutsAction<Employeeinfo> {
 
 	// ======导出结束
 
+	//
+	public String toSelectEmployee(){
+		return "toSelectEmployee";
+	}
+	
 	public String getDeptidnames() {
 		return deptidnames;
 	}
