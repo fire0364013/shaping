@@ -21,8 +21,9 @@
 	</head>
 <body onkeydown="PreventBSK();">
 	<form id="addappversionForm" method="post">
-		<input type="hidden" id="appversionid" name="appversionid" value="${appversionid}">
-		<input type="hidden" id="validstatus" name="validstatus" value="1">
+		<input type="hidden" id="appversionid" name="appversionid" value="${appversionid}" />
+		<input type="hidden" id="appinfoid" name="appinfoid" value="${appinfoid}"/>
+		<input type="hidden" id="validstatus" name="validstatus" value="1" />
 			<table width="100%" border="0" class="Main_Tab_Style">
 				<tr>						
 					<td align="left" class="Main_Tab_Style_title"  style="width: 120px ;height: 20px;">

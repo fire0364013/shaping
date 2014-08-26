@@ -29,17 +29,11 @@ public class AppversionAction extends StrutsAction<Appversion>{
 	private String rows;
 	private String page;
 	private String appversionname;
+	private String appinfoid;
 
 	@Autowired
 	private AppversionManager appversionManager;
 	
-	/**
-	 * 跳转list页面
-	 * @return
-	 */
-	public String toListPage(){
-		return "list";
-	}
 	
 	public String toList() {
 
@@ -59,6 +53,7 @@ public class AppversionAction extends StrutsAction<Appversion>{
 		orderby.put("releasedate", "desc");
 		SearchUtil.getStringSearch(whereSB, params, "validstatus", "=",
 				"1");
+		SearchUtil.getStringSearch(whereSB, params, "appinfoid", "=",appinfoid);
 		if(appversionname != null && !"".equals(appversionname)){
 			SearchUtil.getStringSearch(whereSB, params, "appversionname", "like",
 				"%"+appversionname+"%");
@@ -179,6 +174,14 @@ public class AppversionAction extends StrutsAction<Appversion>{
 
 	public void setAppversionname(String appversionname) {
 		this.appversionname = appversionname;
+	}
+
+	public String getAppinfoid() {
+		return appinfoid;
+	}
+
+	public void setAppinfoid(String appinfoid) {
+		this.appinfoid = appinfoid;
 	}
 
 	

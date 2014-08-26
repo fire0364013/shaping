@@ -59,8 +59,8 @@
 						是否金牌项目：
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
-						<input type="radio" id="isgoldmedal" name="isgoldmedal" value="1" checked="checked"/>是
-						<input type="radio" id="isgoldmedal" name="isgoldmedal" value="0" />否
+						<input type="radio" id="isgoldmedal" name="isgoldmedal" <c:if test="${eitem.isgoldmedal=='1'}"> checked="checked"</c:if>/>是
+						<input type="radio" id="isgoldmedal" name="isgoldmedal" <c:if test="${eitem.isgoldmedal=='0'}"> checked="checked"</c:if> />否
 					</td>
 				</tr>
 				 <tr>

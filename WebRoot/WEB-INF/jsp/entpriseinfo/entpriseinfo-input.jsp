@@ -252,7 +252,30 @@
 							cssStyle="width: 227px;height:20px" theme="simple"></s:textfield>
 
 					</td>
-				</tr>			
+				</tr>		
+				<tr>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 150px; height: 20px;">
+						App 应用：
+					</td>
+					<td align="left" class="Main_Tab_Style_Content" width="270px">
+						<select id="appinfoid" name="appinfo.appinfoid" style="width:230px"  class="TextBox grkj-validate"
+						 validateParam="{type:'string',required:'true',message:'请选择App应用！'}">
+						<option value="" >---请选择---</option>
+							<c:forEach items="${appList}" var="app">
+								<option value="${app.appinfoid }"  
+									<c:if test="${app.appinfoid==entity.appinfo.appinfoid }">selected="selected"</c:if>>${app.appinfoname }
+								</option> 
+							</c:forEach>
+						</select>
+					</td>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 147px; height: 20px;">
+					</td>
+					<td align="left" class="Main_Tab_Style_Content" width="230px">
+					</td>
+				</tr>
+					
 					<!-- 
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
@@ -362,10 +385,10 @@
 						style="width: 147px; height: 20px;">
 						备注：
 					</td>
-					<td colspan="3" >
-							<textarea rows="5" cols="3"  name="remark" id="remark" class="TextBox "  
+					<td colspan="3" class="Main_Tab_Style_Content" width="700px">
+							<textarea rows="5" cols="3"  name="remark" id="remark" class="TextBox"  
 							validateParam="{type:'string',maxLength:'500',required:'false',message:'长度不超过500个字符！'}"
-							style="width: 635px; height: 80px" >${remark }</textarea>
+							style="width: 700px; height: 80px" >${remark }</textarea>
 					</td>
 				</tr>
 				</table>

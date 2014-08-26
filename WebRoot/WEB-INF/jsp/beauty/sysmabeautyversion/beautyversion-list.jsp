@@ -16,9 +16,8 @@
 		<script type="text/javascript" src="${ctx}/validate/input.validate.js"></script>
 		<script language="JavaScript" type="text/javascript">
 		var rootPath="${ctx}";
-		var appinfoid = "${appinfoid}";
     </script>
-    <script type="text/javascript" src="${ctx}/lims/js/appversion.js"></script>
+    <script type="text/javascript" src="${ctx}/lims/js/beauty/sysmabeautyversion.js"></script>
     <script type="text/javascript">
     $(function(){
     	initDataGrid();
@@ -27,6 +26,11 @@
 	</head>
 	<body >
 	<input type="hidden" id="dict">
+	<!--版本右键菜单-->		
+		<div id="versionContextMenu" class="easyui-menu" style="width:120px;">		
+	        <div id="copyVersion" iconCls="icon-copy" onclick="javascript:copyVersion();">复制版本
+	        </div>
+		</div>
 		 <s:form method="post" theme="simple" cssStyle="padding:0px;margin:0px">
 		<div  style="height: 30px; size: 12px">
 			<div>
@@ -35,10 +39,10 @@
 					<tr>
 						<td class="Main_Tab_Style_title"
 							style="width:60px; text-align: left">
-							版本名称：
+							企业名称：
 						</td>
 						<td class="Main_Tab_Style_Content" style="width: 130px;">
-							<input type="text" id="appversionname" class="TextBox" name="appversionname"
+							<input type="text" id="entname" class="TextBox" name="entname"
 								style="width: 130px; height: 20px;" /> 
 						</td>
 					  <td class="Main_Tab_Style_Content" style="text-align:left;">
@@ -60,7 +64,7 @@
 					</td>
 				</tr>
 		</table>
-		<div  style="width: 100%;height: 400px" >
-		<table id="appversiongrid"></table></div>
+		<div  style="width: 100%;height: 655px" >
+		<table id="beautyversiongrid"></table></div>
 </body>
 </html>

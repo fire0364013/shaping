@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="${ctx}/js/jquery.MultiFile.js"></script>
 			<script type="text/javascript"src="${ctx}/js/DatePicker/WdatePicker.js"></script>
 		<script type="text/javascript" src="${ctx}/validate/input.validate.js"></script>
-		<script type="text/javascript" src="${ctx}/lims/js/beauty/advertinfo.js"></script> 
+		<script type="text/javascript" src="${ctx}/lims/js/beauty/sysmaadvertinfo.js"></script> 
 	</head>
 	<body onkeydown="PreventBSK()">
 		<div id="dlg-buttons">
@@ -31,8 +31,8 @@
 							企业：
 						</td>
 						<td align="left" class="Main_Tab_Style_Content">
-							<input type="hidden" id="entid" name="entprise.entid" value="${entid}"/>
-							<input type="text" id="entname" name="entprise.entname" class="TextBox grkj-validate" value="${entname }"  disabled
+							<input type="hidden" id="entid" name="entprise.entid"/>
+							<input type="text" id="entname" name="entprise.entname" class="TextBoxPic grkj-validate" value="${entprise.entname }" onclick="selectEntinfo()"
                               validateParam="{type:'string',maxLength:'50',required:'true',message:'请正确输入标题名称，长度不超过50个字符！'}"	style="width: 340px; height: 20px;" />
 						</td>	
 						<td><font color="red" size="4px"> *</font></td>				

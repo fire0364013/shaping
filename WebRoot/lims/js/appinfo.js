@@ -20,8 +20,8 @@ function initDataGrid(){
 						{field:'operate',title:'操作', width:120,align:"center",
 							formatter:function(value,rec,rowIndex){
 								var links='<img src="'+rootPath +'/themes/default/images/xiangxiimage.png" id="btnshow" onclick="detail(\''+rec.appinfoid+ '\','+rowIndex+')" alt="详情"/>&nbsp;&nbsp;';
-								links+='<img src="'+rootPath +'/themes/default/images/bianjiimage.png" id="btnshow" onclick="addWin(\''+rec.appinfoid+ '\','+rowIndex+')" alt="编辑"/>&nbsp;&nbsp;';
-								//links += '<img src="'+ rootPath + '/themes/default/images/historyimage.png" id="btnshow" onclick="detailbeautyinfo(\''+ rec.beautyversionid+ '\','+rowIndex+')" alt="医美图片"/>';
+								links+='<img src="'+rootPath +'/themes/default/images/bianjiimage.png" onclick="addWin(\''+rec.appinfoid+ '\','+rowIndex+')" alt="编辑"/>&nbsp;&nbsp;';
+								links += '<img src="'+rootPath+'/themes/default/images/autofill.png" alt="App 版本信息" onclick="editApp(\''+rec.appinfoid+ '\','+rowIndex+')"/> &nbsp;' ;
 								return links;
 							}
 						}									
@@ -138,7 +138,7 @@ function initDataGrid(){
 			var _dialog =  window.top.$('	<div id ="role-dlg" style="padding:0px;"><iframe id="appinfoFrame" width="100%" height="100%" frameborder="0" scrolling="no" src='+url+'></iframe></div>').appendTo(window.top.document.body);
 			//window.top.document.body.appendChild(win);
 			_dialog.dialog({
-				title:'App版本详情',
+				title:'App详情',
 				autoOpen:false,
 				modal:true,
 				closed:true,
@@ -156,3 +156,33 @@ function initDataGrid(){
 			_dialog.dialog('open');
 		}
 		
+function editApp(appinfoid,rowindex){
+	$('#appinfogrid').datagrid('clearSelections');
+	var url = rootPath + "/entpriseinfo/appversion/appversion!list.action?appinfoid="+appinfoid;
+	var _dialog =  window.top.$('<div id ="entpriseinfo-dlg" style="padding:0px;"><iframe id="AppFrame" width="100%" height="100%" frameborder="0" scrolling="no" src='+url+'></iframe></div>').appendTo(window.top.document.body);
+	_dialog.dialog({
+	title:'App 版本',
+	autoOpen:false,
+	modal:true,
+	closed:true,
+	width:'1050',
+	height:'550',
+	buttons:[{
+		text:'确定',
+		iconCls:'icon-save',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	},{
+		text:'取消',
+		iconCls:'icon-cancel',
+		handler:function(){
+			_dialog.dialog('close');
+		}
+	}],
+	onClose:function(){
+			_dialog.dialog("destroy");					
+		}
+	});
+	_dialog.dialog('open');
+}

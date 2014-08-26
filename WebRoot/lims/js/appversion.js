@@ -3,7 +3,7 @@ function initDataGrid(){
 				nowrap: false,
 				striped: true,
 				collapsible:true,
-				url : rootPath + '/entpriseinfo/appversion/appversion!toList.action',
+				url : rootPath + '/entpriseinfo/appversion/appversion!toList.action?appinfoid='+appinfoid,
 				fit : true,
 				fitColumns : true,
 				scrollbarSize:0,
@@ -56,9 +56,9 @@ function initDataGrid(){
 			$('#appversiongrid').datagrid('clearSelections');
 			var url;
 			if(id!=""){
-			   url = rootPath +"/entpriseinfo/appversion/appversion!input.action?id=" + id;
+			   url = rootPath +"/entpriseinfo/appversion/appversion!input.action?id=" + id+"&appinfoid="+appinfoid;
 			}else{
-			  url = rootPath +"/entpriseinfo/appversion/appversion!input.action";
+			  url = rootPath +"/entpriseinfo/appversion/appversion!input.action?appinfoid="+appinfoid;
 			}
 			var _dialog =  window.top.$('<div id ="role-dlg" style="padding:0px;"><iframe id="appversionFrame" width="100%" height="100%" frameborder="0" scrolling="auto" src='+url+'></iframe></div>').appendTo(window.top.document.body);
 			_dialog.dialog({

@@ -55,15 +55,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
 						<input type="text" id="operator" name="operator" value="${operator}"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" disabled/>
+						class="TextBox" disabled/>
 				</tr>
 				<tr>
 					<td align="left" class="Main_Tab_Style_title" >
-						提交人：
+						提交日期：
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
 						<input type="text" id="operatedate" name="operatedate" value="${operatedate}"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" disabled/>
+						class="TextBox" disabled/>
 				</tr>
 				 <tr>
 					<td align="left" class="Main_Tab_Style_title" >
@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
 						<input type="text" id="mobilephone" name="mobilephone" value="${mobilephone }"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" disabled/>
+						class="TextBox" disabled/>
 					</td>
 				</tr>
 				 <tr>

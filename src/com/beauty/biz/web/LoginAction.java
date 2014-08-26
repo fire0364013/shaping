@@ -222,7 +222,7 @@ public class LoginAction extends ActionSupport implements Preparable {
 						SessionUser sessionUser = new SessionUser(user
 								.getUserid(), user.getLoginname(), user
 								.getPassword(), user.getRealname(), moduleList,
-								user.getDepartmentinfo(), user.getManagedepts(),user.getEntid().getEntid());
+								user.getDepartmentinfo(), user.getManagedepts(),user.getEntid().getEntid(),user.getEntid().getEntname());
 						ac.getSession().put("sessionUser", sessionUser);
 						// ///////////////添加系统日志////////////////////
 						String operatecontent = "";

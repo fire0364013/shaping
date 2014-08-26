@@ -40,8 +40,7 @@ function initDataGrid(){
 						formatter:function(value,rowData,rowIndex){
 							return '<span style="color:red"><img src="'+rootPath+'/themes/default/images/xiangxiimage.png" alt="详细" onclick="viewEntpriseinfo('+rowData.entid+')"/>&nbsp; ' +
 							'<img src="'+rootPath+'/themes/default/images/bianjiimage.png" alt="编辑" onclick="editEntpriseinfo('+rowData.entid+')"/> &nbsp;' +
-							'<img src="'+rootPath+'/themes/default/images/deleteimage.png" alt="删除" onclick="deleteEntpriseinfo(\''+rowData.entid+ '\',\''+ rowIndex+'\')"/>&nbsp; ' +
-							'<img src="'+rootPath+'/themes/default/images/autofill.png" alt="App信息" onclick="editApp('+rowData.entid+')"/> &nbsp;' ;
+							'<img src="'+rootPath+'/themes/default/images/deleteimage.png" alt="删除" onclick="deleteEntpriseinfo(\''+rowData.entid+ '\',\''+ rowIndex+'\')"/>&nbsp; ' ;
 						}
 					}					
 				]],
@@ -83,8 +82,8 @@ function viewEntpriseinfo(id){
 	autoOpen:false,
 	modal:true,
 	closed:true,
-	width:'800',
-	height:'450',
+	width:'950',
+	height:'550',
 	onClose:function(){
 			_dialog.dialog("destroy");					
 		}
@@ -107,8 +106,8 @@ function editEntpriseinfo(id){
 	autoOpen:false,
 	modal:true,
 	closed:true,
-	width:'800',
-	height:'500',
+	width:'950',
+	height:'550',
 	buttons:[{
 		text:'保存',
 		iconCls:'icon-save',
@@ -442,32 +441,4 @@ function grandsonIndustryData() {
 	});
 }
 
-function editApp(entid){
-	var url = rootPath + "/entpriseinfo/appversion/appversion!list.action";
-	var _dialog =  window.top.$('<div id ="entpriseinfo-dlg" style="padding:0px;"><iframe id="AppFrame" width="100%" height="100%" frameborder="0" scrolling="no" src='+url+'></iframe></div>').appendTo(window.top.document.body);
-	_dialog.dialog({
-	title:'App 版本',
-	autoOpen:false,
-	modal:true,
-	closed:true,
-	width:'1050',
-	height:'550',
-	buttons:[{
-		text:'确定',
-		iconCls:'icon-save',
-		handler:function(){
-			_dialog.dialog('close');
-		}
-	},{
-		text:'取消',
-		iconCls:'icon-cancel',
-		handler:function(){
-			_dialog.dialog('close');
-		}
-	}],
-	onClose:function(){
-			_dialog.dialog("destroy");					
-		}
-	});
-	_dialog.dialog('open');
-}
+

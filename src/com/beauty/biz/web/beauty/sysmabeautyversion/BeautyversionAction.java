@@ -1,4 +1,4 @@
-package com.beauty.biz.web.beauty.beautyversion;
+package com.beauty.biz.web.beauty.sysmabeautyversion;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -99,13 +99,6 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 			e.printStackTrace();
 		}
 		return null;
-	}
-	
-	public void doInputEntity() throws Exception{
-		String entid = getSessionUser().getEntid();
-		String entname = getSessionUser().getEntname();
-		getRequest().setAttribute("entid", entid);
-		getRequest().setAttribute("entname", entname);
 	}
 	
 	public String save() throws IOException {

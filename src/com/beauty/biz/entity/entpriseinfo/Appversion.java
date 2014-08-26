@@ -38,6 +38,8 @@ public class Appversion implements java.io.Serializable {
 	private Timestamp operateDate;//操作日期
 	private String validstatus;//有效状态
 	private String remark;//备注
+	private String appinfoid;
+	
 
 	// Constructors
 
@@ -171,4 +173,14 @@ public class Appversion implements java.io.Serializable {
 		this.remark = remark;
 	}
 
+	@Column(name = "appinfoid")
+	public String getAppinfoid() {
+		return appinfoid;
+	}
+
+	public void setAppinfoid(String appinfoid) {
+		this.appinfoid = appinfoid;
+	}
+
+	
 }

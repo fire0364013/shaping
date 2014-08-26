@@ -15,23 +15,25 @@ import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.beauty.biz.entity.dictionary.Dictionaryinfo;
+import com.beauty.biz.entity.entpriseinfo.Appinfo;
+import com.beauty.biz.entity.entpriseinfo.EntpriseInfo;
+import com.beauty.biz.entity.entpriseinfo.Industry;
+import com.beauty.biz.entity.entpriseinfo.Pollutionsourcetype;
+import com.beauty.biz.entity.entpriseinfo.Region;
+import com.beauty.biz.entity.entpriseinfo.Registertype;
+import com.beauty.biz.entity.entpriseinfo.Scale;
 import com.beauty.biz.service.SystemlogManager;
+import com.beauty.biz.service.entpriseinfo.AppinfoManager;
+import com.beauty.biz.service.entpriseinfo.EntpriseInfoManager;
+import com.beauty.biz.service.entpriseinfo.IndustryManager;
+import com.beauty.biz.service.entpriseinfo.PollutionsourcetypeManager;
+import com.beauty.biz.service.entpriseinfo.RegionManager;
+import com.beauty.biz.service.entpriseinfo.RegistertypeManager;
+import com.beauty.biz.service.entpriseinfo.ScaleManager;
 import com.beauty.common.page.QueryResult;
 import com.beauty.common.utils.SearchUtil;
 import com.beauty.common.utils.SessionUser;
 import com.beauty.common.web.StrutsAction;
-import com.beauty.biz.entity.entpriseinfo.Region;
-import com.beauty.biz.entity.entpriseinfo.EntpriseInfo;
-import com.beauty.biz.entity.entpriseinfo.Industry;
-import com.beauty.biz.entity.entpriseinfo.Pollutionsourcetype;
-import com.beauty.biz.entity.entpriseinfo.Registertype;
-import com.beauty.biz.entity.entpriseinfo.Scale;
-import com.beauty.biz.service.entpriseinfo.RegionManager;
-import com.beauty.biz.service.entpriseinfo.EntpriseInfoManager;
-import com.beauty.biz.service.entpriseinfo.IndustryManager;
-import com.beauty.biz.service.entpriseinfo.PollutionsourcetypeManager;
-import com.beauty.biz.service.entpriseinfo.RegistertypeManager;
-import com.beauty.biz.service.entpriseinfo.ScaleManager;
 
 @Results( {
 		@Result(name = "industry-input", location = "entpriseinfo-industyInput.jsp"),
@@ -52,6 +54,7 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 	private List<Registertype> registertypeList;// 登记注册类型
 	private List<Dictionaryinfo> dictionaryinfoList;// 关注程度
 	private List<Pollutionsourcetype> pollutionsourcetypeList;// 污染源类型
+	private List<Appinfo> appList;//App应用
 	// private List<Region> regionList;//查出所有省份
 	private Registertype registertype;// 登记注册编码
 	private Pollutionsourcetype pollutionsourcetype;// 污染源编码
@@ -79,6 +82,8 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 	private PollutionsourcetypeManager pollutionsourcetypeManager;
 	@Autowired
 	private RegionManager regionManager;
+	@Autowired
+	private AppinfoManager appinfoManager;
 	// @Autowired
 	// private UserInfoManager userInfoManager;
 	@Autowired
@@ -343,6 +348,7 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 //		registertypeList = registertypeManager.getAllRegistertype();// 得所有登记注册类型实体
 		registertypeList = new ArrayList<Registertype>();
 		dictionaryinfoList = entpriseInfoManager.getAllDictionaryinfo();
+		appList = appinfoManager.getAll();
 		if (registertypeList != null && registertypeList.size() > 0) {
 			int a = 0;
 			for (int i = 0; i < registertypeList.size(); i++) {
@@ -582,6 +588,16 @@ public class EntpriseinfoAction extends StrutsAction<EntpriseInfo> {
 
 	public void setSourcetype(String sourcetype) {
 		this.sourcetype = sourcetype;
+	}
+
+
+	public List<Appinfo> getAppList() {
+		return appList;
+	}
+
+
+	public void setAppList(List<Appinfo> appList) {
+		this.appList = appList;
 	}
 
 }

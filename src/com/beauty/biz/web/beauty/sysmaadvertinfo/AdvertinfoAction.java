@@ -1,4 +1,4 @@
-package com.beauty.biz.web.beauty.advertinfo;
+package com.beauty.biz.web.beauty.sysmaadvertinfo;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -102,13 +102,6 @@ public class AdvertinfoAction extends StrutsAction<Advertinfo>{
 			e.printStackTrace();
 		}
 		return null;	
-	}
-	
-	public void doInputEntity() throws Exception{
-		String entid = getSessionUser().getEntid();
-		String entname = getSessionUser().getEntname();
-		getRequest().setAttribute("entid", entid);
-		getRequest().setAttribute("entname", entname);
 	}
 	/**
 	 * 保存项目信息~~
