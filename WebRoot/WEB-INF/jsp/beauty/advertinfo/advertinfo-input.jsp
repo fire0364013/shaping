@@ -31,8 +31,8 @@
 							企业：
 						</td>
 						<td align="left" class="Main_Tab_Style_Content">
-							<input type="hidden" id="entid" name="entprise.entid"/>
-							<input type="text" id="entname" name="entprise.entname" class="TextBoxPic grkj-validate" value="${entprise.entname }" onclick="selectEntinfo()"
+							<input type="hidden" id="entid" name="entprise.entid" value="${entid}"/>
+							<input type="text" id="entname" name="entprise.entname" class="TextBox grkj-validate" value="${entname }"  disabled
                               validateParam="{type:'string',maxLength:'50',required:'true',message:'请正确输入标题名称，长度不超过50个字符！'}"	style="width: 340px; height: 20px;" />
 						</td>	
 						<td><font color="red" size="4px"> *</font></td>				
@@ -75,8 +75,8 @@
 							是否发布：
 						</td>
 						<td align="left" class="Main_Tab_Style_Content">
-							<input type="radio" id="releaseFlag" name="releaseFlag" value="1" />是
-							<input type="radio" id="releaseFlag" name="releaseFlag" value="0" />否
+							<input type="radio" id="releaseFlag" name="releaseFlag" value="1" checked="checked" />是
+							<input type="radio" id="releaseFlag" name="releaseFlag" value="0" <c:if test="${eitem.isgoldmedal=='0'}"> checked="checked"</c:if> />否
 						</td>	
 						<td><font color="red" size="4px"> *</font></td>				
 					</tr>

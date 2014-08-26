@@ -35,8 +35,7 @@ function initDataGrid(){
 			        {field:'entname',title:'企业名称',width:300,align : 'center'},					
 					{field:'region',title:'行政区',width:150,align : 'center'},
 					{field:'pollutionsourcetype',title:'企业类型',width:150,align : 'center'},
-					//{field:'scale',title:'企业规模',width:160,align : 'center'},
-					//{field:'industry',title:'行业类型',width:180,align : 'center'},
+					{field:'appinfoname',title:'App名称',width:160,align : 'center'},
 					{field:'operate',title:'操作',width:150,align : 'center',
 						formatter:function(value,rowData,rowIndex){
 							return '<span style="color:red"><img src="'+rootPath+'/themes/default/images/xiangxiimage.png" alt="详细" onclick="viewEntpriseinfo('+rowData.entid+')"/>&nbsp; ' +
@@ -83,8 +82,8 @@ function viewEntpriseinfo(id){
 	autoOpen:false,
 	modal:true,
 	closed:true,
-	width:'800',
-	height:'450',
+	width:'950',
+	height:'550',
 	onClose:function(){
 			_dialog.dialog("destroy");					
 		}
@@ -107,8 +106,8 @@ function editEntpriseinfo(id){
 	autoOpen:false,
 	modal:true,
 	closed:true,
-	width:'800',
-	height:'500',
+	width:'950',
+	height:'550',
 	buttons:[{
 		text:'保存',
 		iconCls:'icon-save',
@@ -441,3 +440,5 @@ function grandsonIndustryData() {
 		}
 	});
 }
+
+

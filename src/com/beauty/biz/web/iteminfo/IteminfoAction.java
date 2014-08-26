@@ -39,6 +39,7 @@ import com.beauty.biz.service.iteminfo.IteminfoManager;
 // @Result(name =StrutsAction.INPUT, location = "type-input.jsp"),
 		@Result(name = "showContainer", location = "showcontainer-list.jsp"),
 		@Result(name = "showsavedose", location = "showsavedose-list.jsp"),
+		@Result(name="ItemList",location="selectitem.jsp")
 })
 public class IteminfoAction extends StrutsAction<Iteminfo> {
 
@@ -51,6 +52,7 @@ public class IteminfoAction extends StrutsAction<Iteminfo> {
 	private ContainerManager containerManger;
 	@Autowired
 	private SystemlogManager systemlogManager;
+
 	private String rows;// 用于接收页面上的行
 	private String page;// 用于接收页面上的页
 	private String ids;// 接收删除时的id
@@ -66,7 +68,6 @@ public class IteminfoAction extends StrutsAction<Iteminfo> {
 	private String itemtype;// 项目类型
 	List<Monitoritemtype> itemTypeList;
 	private String flag;
-	//private List<Iteminfo> bigItem;
 
 	public String getItemflag() {
 		return itemflag;
@@ -536,6 +537,50 @@ public class IteminfoAction extends StrutsAction<Iteminfo> {
 		}
 	}
 	
+	public void getSelectItemList(){
+		try{
+			String itemname = getRequest().getParameter("itemname");
+			String itemtypeid = getRequest().getParameter("itemtypeid");//当前的项目类型编号
+			String whereSQL = " where 1 = 1";
+			if(null!=itemname && !"".equals(itemname)){
+				whereSQL+="  and i.itemname like '%"+itemname+"%' ";
+			}	
+			
+			if(null!=itemtypeid && !"".equals(itemtypeid)){
+				whereSQL+=" and i.monitoritemtype.itemtypeid = '"+itemtypeid+"' ";
+			}
+			String hql="";
+			List<Iteminfo> itemList =new ArrayList<Iteminfo>();	 
+			
+			hql="select distinct i from Iteminfo i" +
+					 whereSQL+" order by i.itemname asc";
+			itemList= iteminfoManager.getItemListByHQL(hql);
+			
+			List<Map<String,Object>> rowData = new ArrayList<Map<String,Object>>();
+			long total = itemList.size();
+			for(Iteminfo item : itemList){
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("itemtypename", item.getMonitoritemtype()==null?"":item.getMonitoritemtype().getItemtypename());
+				map.put("itemtypeid", item.getMonitoritemtype()==null?"":item.getMonitoritemtype().getItemtypeid());
+				map.put("itemid", item.getItemid());
+				map.put("itemname", item.getItemname());
+				rowData.add(map);
+			}
+			
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("total", total);
+			map.put("rows", rowData);
+			String resultJson = JSONObject.fromObject(map).toString();
+			getResponse().getWriter().write(resultJson);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public String toListPage(){
+		itemTypeList = iteminfoManager.getMonitoritemtype();
+		return "ItemList";
+	}
 	
 	public String showContainer(){
 		return "showContainer";
@@ -633,6 +678,6 @@ public class IteminfoAction extends StrutsAction<Iteminfo> {
 	public String getMonitorpointtypeid() {
 		return monitorpointtypeid;
 	}
-
+	
 
 }

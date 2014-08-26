@@ -195,7 +195,7 @@
 						</s:select>
 					</td>					
 				</tr>
-				<!-- 
+				
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
 						style="width: 150px; height: 20px;">
@@ -213,7 +213,31 @@
 						<s:textfield name="latitude" cssClass="TextBox"
 							cssStyle="width: 240px;height:20px" theme="simple"></s:textfield>
 					</td>
-				</tr>				
+				</tr>	
+				<tr>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 150px; height: 20px;">
+						App 应用：
+					</td>
+					<td align="left" class="Main_Tab_Style_Content" width="270px">
+						<select id="itemtypeid" name="itemtypeid" style="width:180px"  class="TextBox grkj-validate"
+						 validateParam="{type:'string',required:'true',message:'请选择项目大类！'}">
+						<option value="" >---请选择---</option>
+							<c:forEach items="${appList}" var="app">
+								<option value="${app.appinfoid }"  
+									<c:if test="${app.appinfoid==entity.appinfo.appinfoid }">selected="selected"</c:if>
+									>${app.appinfoname }
+								</option> 
+							</c:forEach>
+						</select>
+					</td>
+					<td align="left" class="Main_Tab_Style_title"
+						style="width: 147px; height: 20px;">
+					</td>
+					<td align="left" class="Main_Tab_Style_Content" width="230px">
+					</td>
+				</tr>	
+				<!-- 		
 				<tr>
 					<td align="left" class="Main_Tab_Style_title"
 						style="width: 150px; height: 20px;">

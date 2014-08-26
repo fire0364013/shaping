@@ -16,8 +16,8 @@ import net.sf.json.JSONArray;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.beauty.biz.entity.beauty.Advertinfo;
-import com.beauty.biz.service.beauty.AdvertinfoManager;
+import com.beauty.biz.entity.beautyinfo.Advertinfo;
+import com.beauty.biz.service.beautyinfo.AdvertinfoManager;
 import com.beauty.common.page.QueryResult;
 import com.beauty.common.utils.EasyStr;
 import com.beauty.common.utils.SearchUtil;
@@ -102,6 +102,13 @@ public class AdvertinfoAction extends StrutsAction<Advertinfo>{
 			e.printStackTrace();
 		}
 		return null;	
+	}
+	
+	public void doInputEntity() throws Exception{
+		String entid = getSessionUser().getEntid();
+		String entname = getSessionUser().getEntname();
+		getRequest().setAttribute("entid", entid);
+		getRequest().setAttribute("entname", entname);
 	}
 	/**
 	 * 保存项目信息~~

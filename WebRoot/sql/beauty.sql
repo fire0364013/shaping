@@ -905,14 +905,38 @@ INSERT INTO userroleinfo VALUES ('216', '148', '30');
 INSERT INTO userroleinfo VALUES ('217', '149', '32');
 
 
------zhangcd  2014.8.23 添加医美版本模块管理
+
+
+
+-- ---zhangcd  2014.8.23 添加医美版本模块管理
 INSERT INTO moduleinfo VALUES ('1405', '医美版本管理', '14', '1', '/beauty/beautyversion/beautyversion!list.action', null,null, null);
 INSERT INTO moduleright VALUES ('10647', '19', '1405');
 
------zhangcd  2014.8.24 添加企业广告图片管理
+-- -企业基本信息
+alter table ENTPRISEINFO add (appinfoid varchar(20),longitude varchar(20),latitude varchar(20));
+
+-- ---zhangcd  2014.8.24 添加企业广告图片管理
 INSERT INTO moduleinfo VALUES ('1406', '企业广告图片', '14', '1', '/beauty/advertinfo/advertinfo!list.action', null,null, null);
 INSERT INTO moduleright VALUES ('10648', '19', '1406');
 
+-- ---zhangcd  2014.8.25 添加app应用管理
+INSERT INTO moduleinfo VALUES ('1407', 'App应用管理', '14', '1', '/entpriseinfo/appinfo/appinfo!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10649', '19', '1407');
+
+-- ---员工项目管理
+INSERT INTO moduleinfo VALUES ('1408', '员工项目管理', '14', '1', '/iteminfo/employeeitem/employeeitem!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10650', '19', '1408');
+
+-- ---添加系统企业广告图片管理
+INSERT INTO moduleinfo VALUES ('1410', '系统企业广告图片', '14', '1', '/beauty/sysmaadvertinfo/advertinfo!list.action', null,null, null);
+INSERT INTO moduleright VALUES ('10651', '19', '1410');
+
+-- ---添加系统医美版本管理
+INSERT INTO moduleinfo VALUES ('1411', '系统医美版本管理', '14', '1', '/beauty/sysmabeautyversion/beautyversion!list.action', null,'11', null);
+INSERT INTO moduleright VALUES ('10652', '19', '1411');
+
+-- - App 版本添加App应用id
+alter table appversion add appinfoid varchar(20) comment 'App id';
 
 
 

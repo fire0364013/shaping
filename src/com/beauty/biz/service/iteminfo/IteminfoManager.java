@@ -95,7 +95,18 @@ public class IteminfoManager {
 		List<Monitoritemtype> itemTreess = itemInfoDao.getItemFir(id);
 		return itemTreess;
 	}
+	
+	/**
+	 * 获取项目类型 父节点
+	 * 
+	 * @param
+	 */
+	public List<Monitoritemtype> getMonitoritemtype() {
+		List<Monitoritemtype> itemTreess = monitoritemtypeDao.createQuery(" from Monitoritemtype m where m.parentitemtypeid='0' order by m.itemtypeid asc ").list();
+		return itemTreess;
+	}
 
+	
 	/*
 	 * 根据HQL查询实体
 	 */

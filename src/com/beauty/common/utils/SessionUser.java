@@ -10,6 +10,7 @@ public class SessionUser {
 	private String userid;				//用户编号
 	private Departmentinfo departmentinfo; //部门编号
 	private String entid; // 所属企业
+	private String entname;//所属企业
 	private String loginname;			//用户登录名	
 	private String password;			//用户密码
 	private String realname;			//姓名
@@ -32,7 +33,7 @@ public class SessionUser {
 	
 	public SessionUser(String userid,String loginname,String password,
 			String realname,List<Module> moduleList,Departmentinfo departmentinfo,
-			String managedepts,String entid){
+			String managedepts,String entid,String entname){
 		this.userid = userid;
 		this.loginname = loginname;
 		this.password = password;
@@ -41,6 +42,7 @@ public class SessionUser {
 		this.departmentinfo = departmentinfo;
 		this.managedepts = managedepts;
 		this.entid = entid;
+		this.entname = entname;
 	}
 	
 	
@@ -120,5 +122,14 @@ public class SessionUser {
 	public void setModule(Module module) {
 		this.module = module;
 	}
+
+	public String getEntname() {
+		return entname;
+	}
+
+	public void setEntname(String entname) {
+		this.entname = entname;
+	}
+	
 	
 }

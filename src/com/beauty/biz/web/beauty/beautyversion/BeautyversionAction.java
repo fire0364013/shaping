@@ -1,7 +1,6 @@
 package com.beauty.biz.web.beauty.beautyversion;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,14 +8,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import jxl.write.DateTime;
-
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.beauty.biz.entity.beauty.Beautyversion;
-import com.beauty.biz.service.beauty.BeautyversionManager;
+import com.beauty.biz.entity.beautyinfo.Beautyversion;
+import com.beauty.biz.service.beautyinfo.BeautyversionManager;
 import com.beauty.common.page.QueryResult;
 import com.beauty.common.utils.EasyStr;
 import com.beauty.common.utils.SearchUtil;
@@ -102,6 +99,13 @@ public class BeautyversionAction extends StrutsAction<Beautyversion> {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void doInputEntity() throws Exception{
+		String entid = getSessionUser().getEntid();
+		String entname = getSessionUser().getEntname();
+		getRequest().setAttribute("entid", entid);
+		getRequest().setAttribute("entname", entname);
 	}
 	
 	public String save() throws IOException {

@@ -29,8 +29,8 @@
 						企业名称：
 					</td>
 					<td align="left" class="Main_Tab_Style_Content" >
-						<input type="hidden" id="entid" name="entprise.entid" value="${entprise.entid}" />
-						<input type="text" id="entname" name="entprise.entname" value="${entprise.entname}" style="width: 500px ;height: 25px;" onclick="selectEntinfo()"
+						<input type="hidden" id="entid" name="entprise.entid" value="${entid}" />
+						<input type="text" id="entname" name="entprise.entname" value="${entname}" style="width: 500px ;height: 25px;"  disabled
 						class="TextBoxPic easyui-validatebox" required="true" missingMessage="企业不能为空！" /><font color="red" size="4px"> *</font>
 					</td>
 				</tr>
@@ -49,7 +49,7 @@
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
 						<input type="text" id="operator" name="operator" value="${operator}"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" required="true" missingMessage="提交人不能为空！"/><font color="red" size="4px"> *</font>
+						class="TextBox easyui-validatebox" required="true" missingMessage="提交人不能为空！"/><font color="red" size="4px"> *</font>
 				</tr>
 				 <tr>
 					<td align="left" class="Main_Tab_Style_title" >
@@ -57,7 +57,7 @@
 					</td>
 					<td align="left" class="Main_Tab_Style_Content">
 						<input type="text" id="mobilephone" name="mobilephone" value="${mobilephone }"  style="width: 500px ;height: 25px;"
-						class="easyui-validatebox" required="true" missingMessage="电话不能为空！"/><font color="red" size="4px"> *</font>
+						class="TextBox easyui-validatebox" required="true" missingMessage="电话不能为空！"/><font color="red" size="4px"> *</font>
 					</td>
 				</tr>
 				 <tr>
